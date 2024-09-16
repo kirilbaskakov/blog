@@ -1,0 +1,42 @@
+.footer {
+    background: #232536;
+    padding: 2rem 3rem;
+}
+
+.footer >  * + * {
+    margin-top: 2rem;
+}
+
+.subscribeTitle {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.subscribeForm {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #fff;
+    background-color: #2E3040;
+    padding: 4rem 2rem;
+}
+
+.subscribeInput {
+    min-width: 320px;
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid #4C4C4C;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 18px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address {
+    color: #fff;
+    line-height: 1.75em;
+}
