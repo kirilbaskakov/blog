@@ -1,7 +1,7 @@
 .testimonials {
     display: flex;
     background: #FBF6EA;
-    padding: 4rem;
+    padding: 4rem 6rem;
     gap: 6rem;
 }
 
@@ -59,3 +59,20 @@
     color: #6D6E76;
 }
 
+.arrows {
+    display: flex;
+    gap: 1rem;
+}
+
+.arrow {
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

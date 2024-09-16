@@ -28,7 +28,10 @@ const Testimonials = () => {
               <p className={styles.profileSubtitle}>New york, USA</p>
             </div>
           </div>
-          <div></div>
+          <div className={styles.arrows}>
+            <button className={styles.arrow}></button>
+            <button className={styles.arrow}></button>
+          </div>
         </div>
       </div>
     </div>
