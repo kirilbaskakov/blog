@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    .text {
+        h4 {
+            margin: 0.75rem 0;
+        }
+    }
+    img {
+        width: 50%;
+        height: auto;
+    }
+}
+
+.card:nth-child(2n) {
+    .text {
+        order: 2;
+    }
+    img {
+        order: 1;
+    }
+}
+
+.card {
+    margin-top: 5rem;
+}
