@@ -1,0 +1,23 @@
+.postCard {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .textBlock {
+        width: 50%;
+    }
+
+    img {
+        flex-shrink: 0;
+        width: 30%;
+        object-fit: cover;
+    }
+
+    h2 {
+        margin: 1rem 0;
+    }
+}
+
+.postCard + .postCard {
+    margin-top: 4rem;
+}
