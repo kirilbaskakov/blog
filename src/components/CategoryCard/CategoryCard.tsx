@@ -5,19 +5,25 @@ import Image, { StaticImageData } from 'next/image';
 const CategoryCard = ({
   icon,
   title,
-  text
+  text,
+  type = 'large'
 }: {
   icon: StaticImageData;
   title: string;
   text: string;
+  type?: 'small' | 'large';
 }) => {
   return (
-    <div className={styles.categoryCard}>
+    <div
+      className={
+        styles.categoryCard + ' ' + (type == 'small' ? styles.small : '')
+      }
+    >
       <div className={styles.categoryIcon}>
         <Image src={icon} alt={`${title} icon`} />
       </div>
       <h3>{title}</h3>
-      <p className="body1 secondary">{text}</p>
+      {type === 'large' && <p className="body1 secondary">{text}</p>}
     </div>
   );
 };

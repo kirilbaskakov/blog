@@ -1,0 +1,30 @@
+.categorySidebar {
+    padding: 4rem 0;
+    max-width: 300px;
+    
+    > * + * {
+        margin-top: 1.75rem;
+    }
+}
+
+.search {
+    display: flex;
+
+    input {
+        padding: 0 0.75rem;
+    }
+}
+
+.cards {
+    margin-top: 1.5rem;
+    > * + * {
+        margin-top: 1.25rem;
+    }
+}
+
+.tags {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

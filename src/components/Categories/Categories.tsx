@@ -1,5 +1,5 @@
 import React from 'react';
-import categoriesList from './categoriesList';
+import categories from '@/constants/categories';
 import CategoryCard from '../CategoryCard/CategoryCard';
 import styles from './Categories.module.scss';
 
@@ -8,7 +8,7 @@ const Categories = () => {
     <div className={styles.categories}>
       <h2>Choose a category</h2>
       <div className={styles.cards}>
-        {categoriesList.map((category, index) => (
+        {categories.map((category, index) => (
           <CategoryCard key={index} {...category} />
         ))}
       </div>
