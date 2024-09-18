@@ -1,0 +1,13 @@
+.categoryHeader {
+    padding: 5rem 0;
+    background: #F4F0F8;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 450px;
+    text-align: center;
+    > * + * {
+        margin-top: 1rem;
+    }
+}
