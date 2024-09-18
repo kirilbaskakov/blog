@@ -1,0 +1,15 @@
+.postsList {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    gap: 2rem;
+    padding: 4rem 0;
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+}
+
+.postsHeading {
+    display: flex;
+    justify-content: space-between;
+}

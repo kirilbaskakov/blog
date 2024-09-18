@@ -1,0 +1,78 @@
+.testimonials {
+    display: flex;
+    background: #FBF6EA;
+    padding: 4rem 6rem;
+    gap: 6rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.25em;
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25em;
+    letter-spacing: 3px;
+}
+
+.text {
+    margin-top: 1.25rem;
+    font-size: 16px;
+    color: #232536;
+    line-height: 1.5em;
+}
+
+.reviewText {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+
+.separator {
+    border-left: 1px solid #6D6E76;
+}
+
+.reviewInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+}
+
+.profileTitle {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+
+.profileSubtitle {
+    font-size: 16px;
+    line-height: 1.5em;
+    color: #6D6E76;
+}
+
+.arrows {
+    display: flex;
+    gap: 1rem;
+}
+
+.arrow {
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

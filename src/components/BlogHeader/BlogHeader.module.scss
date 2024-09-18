@@ -1,0 +1,25 @@
+.blogHeader {
+    display: flex;
+    padding: 4rem;
+    gap: 6rem;
+    background: #F4F0F8;
+
+    h2 {
+        margin: 1rem 0;
+    }
+
+    .text {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .image {
+        width: 40%;
+        overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+}

@@ -1,0 +1,26 @@
+.card {
+    padding: 2rem 1rem;
+    background: #F4F4F4;
+    flex: 1;
+
+}
+
+.title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-top: 1rem;
+}
+
+.job {
+    font-size: 14px;
+    color: #6D6E76;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.image {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 100%;
+}

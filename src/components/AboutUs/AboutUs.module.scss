@@ -1,0 +1,30 @@
+.pattern {
+    margin-left: auto;
+    width: 80%;
+    height: 23px;
+    background: linear-gradient(to right, #FFD050 70%, #592EA9 30%);
+}
+
+.container {
+    background: #F4F0F8;
+    display: flex;
+    padding: 4rem 3rem;
+    gap: 3rem;
+
+    div {
+        width: 50%;
+    }
+
+    h2, h3 {
+        margin: 1rem 0;
+    }
+}
+
+
+.link {
+    display: block;
+    margin-top: 1rem;
+    color: #592EA9;
+    font-size: 18px;
+    font-weight: 700;
+}

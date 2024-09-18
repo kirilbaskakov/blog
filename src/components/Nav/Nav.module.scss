@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navTitle {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: auto;
+}
+
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}

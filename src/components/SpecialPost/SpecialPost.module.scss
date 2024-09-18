@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem 0;
+}
+
+.image {
+    flex-shrink: 0;
+    width: 65vw;
+
+    img {
+        width: 100%;
+    }
+}
+
+.textContainer {
+    flex-shrink: 0;
+    background-color: #fff;
+    padding: 5rem;
+    width: 40vw;
+    transform: translate(-50%, 0);
+    h1 {
+        margin: 1rem 0;
+    }
+
+    button {
+        margin-top: 1.25rem;
+    }
+}
