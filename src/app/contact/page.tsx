@@ -1,6 +1,7 @@
 import ContactForm from '@/components/ContactForm/ContactForm';
 import React from 'react';
 import styles from './page.module.scss';
+import Map from '@/components/Map/Map';
 
 const page = () => {
   return (
@@ -30,6 +31,7 @@ const page = () => {
         </div>
       </div>
       <ContactForm />
+      <Map />
     </div>
   );
 };
