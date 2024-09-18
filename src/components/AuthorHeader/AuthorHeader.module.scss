@@ -1,0 +1,25 @@
+.authorHeader {
+    display: flex;
+    background: #F4F0F8;
+    padding: 5rem 4rem;
+    gap: 2rem;
+    position: relative;
+}
+
+.pattern {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    width: 80%;
+    height: 23px;
+    background: linear-gradient(to right, #FFD050 70%, #592EA9 30%);
+}
+
+.textBlock {
+    max-width: 800px;
+
+    p {
+        margin-top: 1.25rem;
+        margin-bottom: 1rem;
+    }
+}
