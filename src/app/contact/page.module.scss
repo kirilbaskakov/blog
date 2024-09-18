@@ -1,6 +1,25 @@
 .contactUs {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     background: #592EA9;
     color: white;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 2rem 4rem;
+    text-align: start;
+}
+
+.contactBody {
+    text-align: center;
+    width: 60%;
+    margin: 5rem auto;
+}
+
+.subtitle {
+    color: #ffffff90;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: #ffffff90;
 }

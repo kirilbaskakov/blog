@@ -4,11 +4,11 @@ import styles from './page.module.scss';
 
 const page = () => {
   return (
-    <div>
+    <div className={styles.contactBody}>
       <div>
         <p className="cap3">Contact us</p>
         <h1>Let’s Start a Conversation</h1>
-        <p className="body1">
+        <p className="body1 secondary">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim.
@@ -16,15 +16,17 @@ const page = () => {
       </div>
       <div className={styles.contactUs}>
         <div>
-          <p>Working hours</p>
+          <p className={'body2 ' + styles.subtitle}>Working hours</p>
           <h5>Monday to Friday</h5>
           <h5>9:00 AM to 8:00 PM </h5>
-          <p className="body1 secondary">Our Support Team is available 24/7</p>
+          <p className={'body1 ' + styles.text}>
+            Our Support Team is available 24/7
+          </p>
         </div>
         <div>
-          <p>Contact us</p>
+          <p className={'body2 ' + styles.subtitle}>Contact us</p>
           <h5>020 7993 2905</h5>
-          <p className="body1 secondary">Our Support Team is available 24/7</p>
+          <p className={'body1 ' + styles.text}>hello@finsweet.com</p>
         </div>
       </div>
       <ContactForm />
