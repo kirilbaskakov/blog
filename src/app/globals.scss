@@ -28,6 +28,11 @@ a {
 
 main {
   padding: 0 4rem;
+
+.main {
+    margin-top: 4rem;
+    padding: 0 4rem;
+
 }
 
 h1 {
@@ -78,13 +83,6 @@ h4 {
   letter-spacing: 3px;
 }
 
-.label1 {
-  font-size: 14px;
-  line-height: 1.5em;
-  font-weight: 500;
-  color: #4C4C4C;
-}
-
 .cap3 {
   font-size: 16px;
   text-transform: uppercase;
@@ -94,3 +92,11 @@ h4 {
   color: #232536;
 
 }
+
+.label1 {
+  font-size: 14px;
+  line-height: 1.5em;
+  font-weight: 500;
+  color: #4C4C4C;
+}
+
