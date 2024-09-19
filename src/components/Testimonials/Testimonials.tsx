@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Testimonials.module.scss';
-import ProfileIcon from '@/assets/Profile picture.png';
-import Image from 'next/image';
+import AuthorInfo from '../AuthorInfo/AuthorInfo';
 
 const Testimonials = () => {
   return (
@@ -21,13 +20,7 @@ const Testimonials = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div className={styles.reviewInfo}>
-          <div className={styles.profile}>
-            <Image src={ProfileIcon} alt="Profile icon" />
-            <div>
-              <h4 className={styles.profileTitle}>Jonathan Vallem</h4>
-              <p className={styles.profileSubtitle}>New york, USA</p>
-            </div>
-          </div>
+          <AuthorInfo />
           <div className={styles.arrows}>
             <button className={styles.arrow}></button>
             <button className={styles.arrow}></button>
