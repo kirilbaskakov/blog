@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import styles from './CategoryCard.module.scss';
 import Image, { StaticImageData } from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const CategoryCard = ({
   icon,
@@ -13,8 +16,15 @@ const CategoryCard = ({
   text: string;
   type?: 'small' | 'large';
 }) => {
+  const router = useRouter();
+
+  const onClick = () => {
+    router.replace(`/blog/${title.toLocaleLowerCase()}`);
+  };
+
   return (
     <div
+      onClick={onClick}
       className={
         styles.categoryCard + ' ' + (type == 'small' ? styles.small : '')
       }

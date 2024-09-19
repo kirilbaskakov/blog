@@ -11,13 +11,13 @@ const Nav = () => {
       <Link href="/" className={styles.navLink}>
         Home
       </Link>
-      <Link href="/" className={styles.navLink}>
+      <Link href="/blog" className={styles.navLink}>
         Blog
       </Link>
-      <Link href="/" className={styles.navLink}>
+      <Link href="/about" className={styles.navLink}>
         About us
       </Link>
-      <Link href="/" className={styles.navLink}>
+      <Link href="/contact" className={styles.navLink}>
         Contact us
       </Link>
       <Link href="/" className="button secondary">

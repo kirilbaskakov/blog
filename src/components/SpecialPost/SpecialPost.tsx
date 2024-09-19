@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './SpecialPost.module.scss';
 import SpecialPostImage from '@/assets/SpeciaPost.webp';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SpecialPost = () => {
   return (
@@ -22,7 +23,9 @@ const SpecialPost = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip.
         </p>
-        <button className="button">Discover our story {'>'}</button>
+        <Link href="/about" className="button">
+          Discover our story {'>'}
+        </Link>
       </div>
     </div>
   );

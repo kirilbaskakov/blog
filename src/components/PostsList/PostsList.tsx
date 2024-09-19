@@ -21,7 +21,7 @@ const PostsList = () => {
       <div>
         <div className={styles.postsHeading}>
           <h2>All Posts</h2>
-          <Link href="/">View All</Link>
+          <Link href="/blog">View All</Link>
         </div>
         <div>
           <PostInfo
