@@ -4,6 +4,11 @@
     padding: 5rem 4rem;
     gap: 2rem;
     position: relative;
+
+    img {
+        max-width: 220px;
+        height: auto;
+    }
 }
 
 .pattern {

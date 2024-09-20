@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Testimonials.module.scss';
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
+import reviews from '@/constants/reviews';
 
 const Testimonials = () => {
   return (
@@ -15,12 +16,9 @@ const Testimonials = () => {
       </div>
       <div className={styles.separator} />
       <div>
-        <p className={styles.reviewText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p className={styles.reviewText}>{reviews[0].text}</p>
         <div className={styles.reviewInfo}>
-          <AuthorInfo />
+          <AuthorInfo authorId={reviews[0].authorId} />
           <div className={styles.arrows}>
             <button className={styles.arrow}></button>
             <button className={styles.arrow}></button>

@@ -3,7 +3,17 @@
     padding: 1.5rem;
     border: 1px solid #6D6E7650;
     text-align: start;
+
+    &:hover {
+        background: #fad369;
+        border: 1px solid #fad369;
+    }
 }
+
+.selected {
+    background: #FFD050;
+    border: 1px solid #FFD050;
+}   
 
 .small {
     display: flex;

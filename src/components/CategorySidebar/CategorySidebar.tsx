@@ -5,7 +5,7 @@ import styles from './CategorySidebar.module.scss';
 import tags from '@/constants/tags';
 import TagCard from '../TagCard/TagCard';
 
-const CategorySidebar = () => {
+const CategorySidebar = ({ category }: { category: string }) => {
   return (
     <div className={styles.categorySidebar}>
       <div className={styles.search}>
@@ -15,8 +15,13 @@ const CategorySidebar = () => {
       <div>
         <h2>Categories</h2>
         <div className={styles.cards}>
-          {categories.map((category, index) => (
-            <CategoryCard key={index} {...category} type="small" />
+          {categories.map((item, index) => (
+            <CategoryCard
+              key={index}
+              {...item}
+              type="small"
+              selected={category.toLowerCase() === item.title.toLowerCase()}
+            />
           ))}
         </div>
       </div>

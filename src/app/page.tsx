@@ -7,14 +7,14 @@ import Testimonials from '@/components/Testimonials/Testimonials';
 import Categories from '@/components/Categories/Categories';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import SpecialPost from '@/components/SpecialPost/SpecialPost';
-import PostsList from '@/components/PostsList/PostsList';
+import PostsBlock from '@/components/PostsBlock/PostsBlock';
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <main className={styles.main}>
-        <PostsList />
+        <PostsBlock />
         <AboutUs />
         <Categories />
         <SpecialPost />

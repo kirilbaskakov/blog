@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './PostInfo.module.scss';
+import Link from 'next/link';
 
 const PostInfo = ({
+  id,
   title,
   author,
-  date
+  date,
+  authorId
 }: {
+  id: number;
+  authorId: number;
   title: string;
   author: string;
   date: string;
@@ -13,9 +18,13 @@ const PostInfo = ({
   return (
     <div className={styles.postInfo}>
       <p className="label1">
-        By {author} | {date}
+        By <Link href={`/author/${authorId}`}>{author}</Link> | {date}
       </p>
-      <h4>{title}</h4>
+      <h4>
+        <Link href={`/${id}`} className={styles.title}>
+          {title}
+        </Link>
+      </h4>
     </div>
   );
 };

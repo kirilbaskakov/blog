@@ -7,10 +7,12 @@ import styles from './AuthorCard.module.scss';
 import { useRouter } from 'next/navigation';
 
 const AuthorCard = ({
+  id,
   icon,
   name,
   job
 }: {
+  id: number;
   icon: StaticImageData;
   name: string;
   job: string;
@@ -18,7 +20,7 @@ const AuthorCard = ({
   const router = useRouter();
 
   const onClick = () => {
-    router.replace(`/author/${name}`);
+    router.push(`/author/${id}`);
   };
 
   return (

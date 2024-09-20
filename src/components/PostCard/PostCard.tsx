@@ -1,20 +1,31 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styles from './PostCard.module.scss';
+import { useRouter } from 'next/navigation';
 
 const PostCard = ({
+  id,
   image,
   category,
   title,
   text
 }: {
+  id: number;
   image: StaticImageData;
   category: string;
   title: string;
   text: string;
 }) => {
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push(`/${id}`);
+  };
+
   return (
-    <div className={styles.postCard}>
+    <div className={styles.postCard} onClick={onClick}>
       <Image src={image} alt={title} width={480} height={316} />
 
       <div className={styles.textBlock}>

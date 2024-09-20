@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './PostHeader.module.scss';
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
+import { PostType } from '@/types/PostType';
 
-const PostHeader = () => {
+const PostHeader = ({ post }: { post: PostType }) => {
   return (
     <div className={styles.postHeader}>
-      <AuthorInfo />
-      <h1>Step-by-step guide to choosing great font pairs</h1>
-      <h4>Startup</h4>
+      <AuthorInfo authorId={post.authorId} />
+      <h1>{post.title}</h1>
+      <h4>{post.category}</h4>
     </div>
   );
 };

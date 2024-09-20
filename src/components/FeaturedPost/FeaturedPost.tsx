@@ -1,17 +1,22 @@
 import React from 'react';
 import styles from './FeaturedPost.module.scss';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 
 const FeaturedPost = ({
+  id,
   image,
   title,
   author,
+  authorId,
   text,
   date
 }: {
+  id: number;
   image: StaticImageData;
   title: string;
   author: string;
+  authorId: number;
   text: string;
   date: string;
 }) => {
@@ -20,11 +25,13 @@ const FeaturedPost = ({
       <Image src={image} alt={`${title} image`} />
       <div className={styles.text}>
         <p className="label1">
-          By {author} | {date}
+          By <Link href={`/author/${authorId}`}>{author}</Link> | {date}
         </p>
         <h3>{title}</h3>
         <p className="body1 secondary">{text}</p>
-        <button className="button">Read more {'>'}</button>
+        <Link href={`/${id}`} className="button">
+          Read more {'>'}
+        </Link>
       </div>
     </div>
   );
