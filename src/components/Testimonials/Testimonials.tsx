@@ -1,9 +1,21 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import styles from './Testimonials.module.scss';
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
 import reviews from '@/constants/reviews';
+import PrevIcon from '@/assets/ArrowPrev.png';
+import NextIcon from '@/assets/ArrowNext.png';
+import Image from 'next/image';
 
 const Testimonials = () => {
+  const [index, setIndex] = useState(0);
+
+  const onNext = () => setIndex(index => (index + 1) % reviews.length);
+
+  const onPrev = () =>
+    setIndex(index => (index - 1 + reviews.length) % reviews.length);
+
   return (
     <div className={styles.testimonials}>
       <div>
@@ -16,12 +28,16 @@ const Testimonials = () => {
       </div>
       <div className={styles.separator} />
       <div>
-        <p className={styles.reviewText}>{reviews[0].text}</p>
+        <p className={styles.reviewText}>{reviews[index].text}</p>
         <div className={styles.reviewInfo}>
-          <AuthorInfo authorId={reviews[0].authorId} />
+          <AuthorInfo authorId={reviews[index].authorId} />
           <div className={styles.arrows}>
-            <button className={styles.arrow}></button>
-            <button className={styles.arrow}></button>
+            <button className={styles.arrowPrev} onClick={onPrev}>
+              <Image src={PrevIcon} alt="Left arrow" />
+            </button>
+            <button className={styles.arrowNext} onClick={onNext}>
+              <Image src={NextIcon} alt="Right arrow" />
+            </button>
           </div>
         </div>
       </div>

@@ -44,10 +44,11 @@
 
 .arrows {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
-.arrow {
+.arrowPrev {
     border: none;
     width: 48px;
     height: 48px;
@@ -55,7 +56,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+.arrowNext {
+    border: none;
+    width: 62px;
+    height: 62px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
-    color: white;
     cursor: pointer;
 }
