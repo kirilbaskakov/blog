@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './JoinUs.module.scss';
+import Link from 'next/link';
 
 const JoinUs = () => {
   return (
@@ -9,7 +10,9 @@ const JoinUs = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt.
       </p>
-      <button className="button">Join Now</button>
+      <Link href="/contact" className="button">
+        Join Now
+      </Link>
     </div>
   );
 };

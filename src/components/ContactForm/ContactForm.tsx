@@ -1,10 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import emailjs from '@emailjs/browser';
+import validateEmail from '@/constants/validateEmail';
+import Popup from '../Popup/Popup';
 
 interface Inputs {
   name: string;
@@ -22,17 +24,24 @@ const ContactForm = () => {
     reset
   } = useForm<Inputs>();
 
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const onPopupClose = () => setIsPopupOpen(false);
+
   const onSubmit: SubmitHandler<Inputs> = data => {
-    console.log(process.env);
-    emailjs.send(
-      process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
-      data,
-      {
-        publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
-      }
-    );
-    reset();
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_CONTACT_ID!,
+        data,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
+        }
+      )
+      .then(() => {
+        setIsPopupOpen(true);
+        reset();
+      });
   };
 
   return (
@@ -55,20 +64,13 @@ const ContactForm = () => {
       <p className={styles.error}>{errors.name?.message}</p>
       <input
         placeholder="Your Email"
-        className={classNames({ [styles.errorInput]: errors.name })}
-        {...register('email', {
-          required: 'Email is required',
-          pattern: {
-            value:
-              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            message: 'Please enter a valid email'
-          }
-        })}
+        className={classNames({ [styles.errorInput]: errors.email })}
+        {...register('email', validateEmail)}
       />
       <p className={styles.error}>{errors.email?.message}</p>
       <input
         placeholder="Query Related"
-        className={classNames({ [styles.errorInput]: errors.name })}
+        className={classNames({ [styles.errorInput]: errors.query })}
         {...register('query', {
           required: 'Query is required',
           maxLength: {
@@ -80,7 +82,7 @@ const ContactForm = () => {
       <p className={styles.error}>{errors.query?.message}</p>
       <textarea
         placeholder="Message"
-        className={classNames({ [styles.errorInput]: errors.name })}
+        className={classNames({ [styles.errorInput]: errors.message })}
         {...register('message', {
           required: 'Message is required',
           maxLength: {
@@ -91,6 +93,13 @@ const ContactForm = () => {
       />
       <p className={styles.error}>{errors.message?.message}</p>
       <button className="button">Send message</button>
+      {isPopupOpen && (
+        <Popup
+          text="Your message has been sent successfully"
+          isOpen={isPopupOpen}
+          onClose={onPopupClose}
+        />
+      )}
     </form>
   );
 };

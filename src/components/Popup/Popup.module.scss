@@ -1,0 +1,13 @@
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    padding: 0.5rem 2rem;
+    background-color: #38ff6d;
+    color: #027d13;
+    opacity: 90%;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 18px;
+}
