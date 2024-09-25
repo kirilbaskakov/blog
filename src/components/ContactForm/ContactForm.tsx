@@ -1,12 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './ContactForm.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import classNames from 'classnames';
+
 import emailjs from '@emailjs/browser';
+import classNames from 'classnames';
+
 import validateEmail from '@/constants/validateEmail';
+
 import Popup from '../Popup/Popup';
+import styles from './ContactForm.module.scss';
 
 interface Inputs {
   name: string;

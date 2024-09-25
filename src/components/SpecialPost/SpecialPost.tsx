@@ -1,8 +1,11 @@
 import React from 'react';
-import styles from './SpecialPost.module.scss';
-import SpecialPostImage from '@/assets/SpeciaPost.webp';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
+import SpecialPostImage from '@/assets/SpeciaPost.webp';
+
+import styles from './SpecialPost.module.scss';
 
 const SpecialPost = () => {
   return (

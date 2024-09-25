@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './TagCard.module.scss';
 
 const TagCard = ({ title }: { title: string }) => {

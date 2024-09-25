@@ -1,7 +1,10 @@
 import React from 'react';
-import styles from './Logos.module.scss';
-import LogosIcon from '@/assets/Logos.png';
+
 import Image from 'next/image';
+
+import LogosIcon from '@/assets/Logos.png';
+
+import styles from './Logos.module.scss';
 
 const Logos = () => {
   return (

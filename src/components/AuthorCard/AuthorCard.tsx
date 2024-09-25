@@ -1,10 +1,13 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-import SocialWrapper from '@/assets/Social wrapper.svg';
-import styles from './AuthorCard.module.scss';
+
+import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
+
+import SocialWrapper from '@/assets/Social wrapper.svg';
+
+import styles from './AuthorCard.module.scss';
 
 const AuthorCard = ({
   id,

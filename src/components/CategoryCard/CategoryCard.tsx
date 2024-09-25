@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
-import styles from './CategoryCard.module.scss';
+
+import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import classNames from 'classnames';
+
+import styles from './CategoryCard.module.scss';
 
 const CategoryCard = ({
   icon,

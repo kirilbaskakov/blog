@@ -1,13 +1,14 @@
-import Hero from '@/components/Hero/Hero';
-import styles from './page.module.css';
-import AuthorsList from '@/components/AuthorsList/AuthorsList';
-import Logos from '@/components/Logos/Logos';
-import JoinUs from '@/components/JoinUs/JoinUs';
-import Testimonials from '@/components/Testimonials/Testimonials';
-import Categories from '@/components/Categories/Categories';
 import AboutUs from '@/components/AboutUs/AboutUs';
-import SpecialPost from '@/components/SpecialPost/SpecialPost';
+import AuthorsList from '@/components/AuthorsList/AuthorsList';
+import Categories from '@/components/Categories/Categories';
+import Hero from '@/components/Hero/Hero';
+import JoinUs from '@/components/JoinUs/JoinUs';
+import Logos from '@/components/Logos/Logos';
 import PostsBlock from '@/components/PostsBlock/PostsBlock';
+import SpecialPost from '@/components/SpecialPost/SpecialPost';
+import Testimonials from '@/components/Testimonials/Testimonials';
+
+import styles from './page.module.css';
 
 export default function Home() {
   return (

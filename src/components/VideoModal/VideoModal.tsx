@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './VideoModal.module.scss';
 
 const VIDEO_URL = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';

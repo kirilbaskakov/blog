@@ -1,5 +1,7 @@
 import React from 'react';
+
 import categories from '@/constants/categories';
+
 import CategoryCard from '../CategoryCard/CategoryCard';
 import styles from './Categories.module.scss';
 

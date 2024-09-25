@@ -1,7 +1,10 @@
 import React from 'react';
-import styles from './Overview.module.scss';
-import OverviewImage from '@/assets/Overview.png';
+
 import Image from 'next/image';
+
+import OverviewImage from '@/assets/Overview.png';
+
+import styles from './Overview.module.scss';
 
 const Overview = () => {
   return (

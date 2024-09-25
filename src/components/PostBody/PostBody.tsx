@@ -1,6 +1,9 @@
-import Image from 'next/image';
 import React from 'react';
+
+import Image from 'next/image';
+
 import PostImage from '@/assets/post5.jpg';
+
 import styles from './PostBody.module.scss';
 
 const PostBody = () => {

@@ -1,15 +1,18 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useState } from 'react';
-import SocialWrapper from '@/assets/Social wrapper.svg';
-import styles from './Footer.module.scss';
-import Nav from '../Nav/Nav';
 import { SubmitHandler, useForm } from 'react-hook-form';
+
 import emailjs from '@emailjs/browser';
-import validateEmail from '@/constants/validateEmail';
 import classNames from 'classnames';
+import Image from 'next/image';
+
+import SocialWrapper from '@/assets/Social wrapper.svg';
+import validateEmail from '@/constants/validateEmail';
+
+import Nav from '../Nav/Nav';
 import Popup from '../Popup/Popup';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   const {
@@ -41,7 +44,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <Nav />
+      <Nav type="footer"/>
       <form className={styles.subscribeForm} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.subscribeTitle}>
           Subscribe to our news letter to get latest updates and news

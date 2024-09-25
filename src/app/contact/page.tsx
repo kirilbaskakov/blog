@@ -1,7 +1,9 @@
-import ContactForm from '@/components/ContactForm/ContactForm';
 import React from 'react';
-import styles from './page.module.scss';
+
+import ContactForm from '@/components/ContactForm/ContactForm';
 import Map from '@/components/Map/Map';
+
+import styles from './page.module.scss';
 
 const page = () => {
   return (

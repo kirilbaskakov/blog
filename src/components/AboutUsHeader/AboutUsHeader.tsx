@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './AboutUsHeader.module.scss';
 
 const AboutUsHeader = () => {

@@ -1,9 +1,11 @@
-import Link from 'next/link';
 import React from 'react';
-import styles from './Nav.module.scss';
-import VideoButton from '../VideoButton/VideoButton';
 
-const Nav = () => {
+import Link from 'next/link';
+
+import VideoButton from '../VideoButton/VideoButton';
+import styles from './Nav.module.scss';
+
+const Nav = ({ type }: { type: 'header' | 'footer' }) => {
   return (
     <nav className={styles.nav}>
       <Link href="/" className={styles.navTitle}>
@@ -21,7 +23,13 @@ const Nav = () => {
       <Link href="/contact" className={styles.navLink}>
         Contact us
       </Link>
-      <VideoButton />
+      {type === 'header' ? (
+        <VideoButton />
+      ) : (
+        <Link href="/policy" className={styles.navLink}>
+          Privacy policy
+        </Link>
+      )}
     </nav>
   );
 };

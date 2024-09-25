@@ -1,8 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+
 import 'mapbox-gl/dist/mapbox-gl.css';
+
 import mapboxgl, { Map as MapType } from 'mapbox-gl';
+
 import styles from './Map.module.scss';
 import mapMarkers from './mapMarkers';
 

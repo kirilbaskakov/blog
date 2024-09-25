@@ -1,8 +1,11 @@
-import Image from 'next/image';
 import React from 'react';
-import SocialIcons from '@/assets/Social wrapper.svg';
-import styles from './AuthorHeader.module.scss';
+
+import Image from 'next/image';
+
 import getAuthor from '@/api/getAuthor';
+import SocialIcons from '@/assets/Social wrapper.svg';
+
+import styles from './AuthorHeader.module.scss';
 
 const AuthorHeader = ({ authorId }: { authorId: number }) => {
   const author = getAuthor(authorId);
@@ -15,7 +18,7 @@ const AuthorHeader = ({ authorId }: { authorId: number }) => {
     <div className={styles.authorHeader}>
       <Image src={author?.icon} alt="Author image" />
       <div className={styles.textBlock}>
-        <h1>Hey there, I’m {author?.name}and welcome to my Blog</h1>
+        <h1>Hey there, I’m {author?.name} and welcome to my Blog</h1>
         <p className="body1 secondary">{author?.description}</p>
         <Image src={SocialIcons} alt="Social icons" />
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import styles from './Popup.module.scss';
 
 const Popup = ({

@@ -1,5 +1,7 @@
-import PolicyHeader from '@/components/PolicyHeader/PolicyHeader';
 import React from 'react';
+
+import PolicyHeader from '@/components/PolicyHeader/PolicyHeader';
+
 import styles from './page.module.scss';
 const page = () => {
   return (

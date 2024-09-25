@@ -1,7 +1,10 @@
 import React from 'react';
-import styles from './BlogHeader.module.scss';
-import FeaturedPostImage from '@/assets/FeaturedPost.jpg';
+
 import Image from 'next/image';
+
+import FeaturedPostImage from '@/assets/FeaturedPost.jpg';
+
+import styles from './BlogHeader.module.scss';
 
 const BlogHeader = () => {
   return (

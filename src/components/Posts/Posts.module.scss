@@ -1,3 +1,21 @@
 .container {
     padding: 3rem 0;
+
+    .buttons {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+
+        button {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+
+            &:disabled {
+                color: #6D6E76;
+            }
+        }
+
+    }
 }

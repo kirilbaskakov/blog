@@ -1,18 +1,21 @@
 import React from 'react';
-import styles from './PostsBlock.module.scss';
-import FeaturedPost from '../FeaturedPost/FeaturedPost';
-import PostInfo from '../PostInfo/PostInfo';
+
 import Link from 'next/link';
+
 import getPosts from '@/api/getPosts';
 
+import FeaturedPost from '../FeaturedPost/FeaturedPost';
+import PostInfo from '../PostInfo/PostInfo';
+import styles from './PostsBlock.module.scss';
+
 const PostsBlock = () => {
-  const posts = getPosts({ limit: 4 });
+  const data = getPosts({ limit: 4 });
 
   return (
     <div className={styles.postsList}>
       <div>
         <h2>Featured Post</h2>
-        <FeaturedPost {...posts[0]} />
+        <FeaturedPost {...data.posts[0]} />
       </div>
       <div>
         <div className={styles.postsHeading}>
@@ -20,7 +23,7 @@ const PostsBlock = () => {
           <Link href="/blog">View All</Link>
         </div>
         <div>
-          {posts.map(post => (
+          {data.posts.map(post => (
             <PostInfo key={post.id} {...post} />
           ))}
         </div>

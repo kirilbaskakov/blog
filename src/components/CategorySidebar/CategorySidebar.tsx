@@ -1,9 +1,11 @@
-import categories from '@/constants/categories';
 import React from 'react';
-import CategoryCard from '../CategoryCard/CategoryCard';
-import styles from './CategorySidebar.module.scss';
+
+import categories from '@/constants/categories';
 import tags from '@/constants/tags';
+
+import CategoryCard from '../CategoryCard/CategoryCard';
 import TagCard from '../TagCard/TagCard';
+import styles from './CategorySidebar.module.scss';
 
 const CategorySidebar = ({ category }: { category: string }) => {
   return (

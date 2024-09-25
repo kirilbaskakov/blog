@@ -1,6 +1,6 @@
 import BusinessIcon from '@/assets/BusinessIcon.png';
-import StartupIcon from '@/assets/StartupIcon.png';
 import EconomyIcon from '@/assets/EconomyIcon.png';
+import StartupIcon from '@/assets/StartupIcon.png';
 import TechnologyIcon from '@/assets/TechnologyIcon.png';
 
 const categories = [

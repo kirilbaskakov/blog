@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './PostHeader.module.scss';
-import AuthorInfo from '../AuthorInfo/AuthorInfo';
+
 import { PostType } from '@/types/PostType';
+
+import AuthorInfo from '../AuthorInfo/AuthorInfo';
+import styles from './PostHeader.module.scss';
 
 const PostHeader = ({ post }: { post: PostType }) => {
   return (

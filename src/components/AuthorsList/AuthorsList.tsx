@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './AuthorList.module.scss';
-import AuthorCard from '../AuthorCard/AuthorCard';
+
 import getAuthors from '@/api/getAuthors';
+
+import AuthorCard from '../AuthorCard/AuthorCard';
+import styles from './AuthorList.module.scss';
 
 const AuthorsList = () => {
   const authors = getAuthors();

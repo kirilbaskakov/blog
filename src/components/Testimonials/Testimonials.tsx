@@ -1,12 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './Testimonials.module.scss';
-import AuthorInfo from '../AuthorInfo/AuthorInfo';
-import reviews from '@/constants/reviews';
-import PrevIcon from '@/assets/ArrowPrev.png';
-import NextIcon from '@/assets/ArrowNext.png';
+
 import Image from 'next/image';
+
+import NextIcon from '@/assets/ArrowNext.png';
+import PrevIcon from '@/assets/ArrowPrev.png';
+import reviews from '@/constants/reviews';
+
+import AuthorInfo from '../AuthorInfo/AuthorInfo';
+import styles from './Testimonials.module.scss';
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);

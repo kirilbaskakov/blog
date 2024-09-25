@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './CategoryHeader.module.scss';
+
 import capitalize from '@/utils/capitalize';
+
+import styles from './CategoryHeader.module.scss';
 
 const CategoryHeader = ({ category }: { category: string }) => {
   return (

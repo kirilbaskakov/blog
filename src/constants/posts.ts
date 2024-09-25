@@ -30,7 +30,7 @@ const posts = [
     author: 'John Doe',
     date: '10 Aug, 2024',
     image: PostImage3,
-    category: 'Startup',
+    category: 'Economy',
     title:
       'Logo design trends to avoid in 2022Logo design trends to avoid in 2022',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
@@ -43,6 +43,26 @@ const posts = [
     image: PostImage4,
     category: 'Technology',
     title: '8 Figma design systems you can download for free today',
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+  },
+  {
+    id: 5,
+    authorId: 1,
+    author: 'Andrew Johnson',
+    date: '21 Aug, 2024',
+    image: PostImage4,
+    category: 'Technology',
+    title: 'Eprehenderit in voluptate velit esse',
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+  },
+  {
+    id: 6,
+    authorId: 1,
+    author: 'Andrew Johnson',
+    date: '25 Aug, 2024',
+    image: PostImage4,
+    category: 'Business',
+    title: 'Excepteur sint occaecat cupidatat non proident',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
   }
 ];

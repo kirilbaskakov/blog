@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './FeaturedPost.module.scss';
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+
+import styles from './FeaturedPost.module.scss';
 
 const FeaturedPost = ({
   id,

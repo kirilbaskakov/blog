@@ -1,9 +1,11 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-import styles from './PostCard.module.scss';
+
+import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
+
+import styles from './PostCard.module.scss';
 
 const PostCard = ({
   id,

@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './JoinUs.module.scss';
+
 import Link from 'next/link';
+
+import styles from './JoinUs.module.scss';
 
 const JoinUs = () => {
   return (

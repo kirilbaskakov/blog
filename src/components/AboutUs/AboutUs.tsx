@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './AboutUs.module.scss';
+
 import Link from 'next/link';
+
+import styles from './AboutUs.module.scss';
 
 const AboutUs = () => {
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './PostInfo.module.scss';
+
 import Link from 'next/link';
+
+import styles from './PostInfo.module.scss';
 
 const PostInfo = ({
   id,
