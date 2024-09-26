@@ -3,11 +3,13 @@ import posts from '@/constants/posts';
 const getPosts = ({
   authorId,
   category,
+  tags = [],
   page = 1,
   limit = 4
 }: {
   authorId?: number;
   category?: string;
+  tags?: string[];
   page?: number;
   limit?: number;
 } = {}) => {
@@ -18,6 +20,12 @@ const getPosts = ({
   if (category) {
     selected = selected.filter(
       post => post.category.toLowerCase() == category.toLowerCase()
+    );
+  }
+  console.log(tags);
+  if (tags.length) {
+    selected = selected.filter(post =>
+      tags.some(tag => post.tags.includes(tag))
     );
   }
   return {

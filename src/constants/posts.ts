@@ -12,7 +12,8 @@ const posts = [
     image: PostImage1,
     category: 'Startup',
     title: 'Design tips for designers that cover everything you need',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Screen', 'Experience']
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const posts = [
     image: PostImage2,
     category: 'Business',
     title: 'How to build rapport with your web design clients',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Business', 'Experience']
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ const posts = [
     category: 'Economy',
     title:
       'Logo design trends to avoid in 2022Logo design trends to avoid in 2022',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Marketing', 'Life']
   },
   {
     id: 4,
@@ -43,7 +46,8 @@ const posts = [
     image: PostImage4,
     category: 'Technology',
     title: '8 Figma design systems you can download for free today',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Technology', 'Life']
   },
   {
     id: 5,
@@ -53,7 +57,8 @@ const posts = [
     image: PostImage4,
     category: 'Technology',
     title: 'Eprehenderit in voluptate velit esse',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Technology', 'Life']
   },
   {
     id: 6,
@@ -63,7 +68,8 @@ const posts = [
     image: PostImage4,
     category: 'Business',
     title: 'Excepteur sint occaecat cupidatat non proident',
-    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.'
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
+    tags: ['Screen', 'Life']
   }
 ];
 

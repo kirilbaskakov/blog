@@ -1,19 +1,45 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import categories from '@/constants/categories';
-import tags from '@/constants/tags';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
 import TagCard from '../TagCard/TagCard';
+import TagInput from '../TagInput/TagInput';
 import styles from './CategorySidebar.module.scss';
 
 const CategorySidebar = ({ category }: { category: string }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const [tags, setTags] = useState<string[]>(
+    searchParams.get('tags')?.split(', ') ?? []
+  );
+
+  const onTagSelect = (tag: string) =>
+    !tags.includes(tag) && setTags(tags => [...tags, tag]);
+
+  const onTagDelete = (tag: string) => () => {
+    setTags(tags.filter(name => name != tag));
+  };
+
+  const onSearch = () => {
+    if (!tags.length) {
+      router.push('?');
+      return;
+    }
+    const params = new URLSearchParams({
+      tags: tags.join(', ')
+    });
+    router.push(`?${params.toString()}`);
+  };
+
   return (
     <div className={styles.categorySidebar}>
-      <div className={styles.search}>
-        <input placeholder="Search for tag..." />
-        <button className="button">Search</button>
-      </div>
+      <TagInput onSelect={onTagSelect} onSearch={onSearch} />
       <div>
         <h2>Categories</h2>
         <div className={styles.cards}>
@@ -27,14 +53,16 @@ const CategorySidebar = ({ category }: { category: string }) => {
           ))}
         </div>
       </div>
-      <div>
-        <h2>All tags</h2>
-        <div className={styles.tags}>
-          {tags.map(tag => (
-            <TagCard key={tag} title={tag} />
-          ))}
+      {tags.length > 0 && (
+        <div>
+          <h2>All tags</h2>
+          <div className={styles.tags}>
+            {tags.map(tag => (
+              <TagCard key={tag} title={tag} onDelete={onTagDelete(tag)} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
