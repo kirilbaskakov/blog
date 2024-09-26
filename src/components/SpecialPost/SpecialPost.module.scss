@@ -5,20 +5,32 @@
 }
 
 .image {
+    display: none;
     flex-shrink: 0;
-    width: 65vw;
+    width: 65%;
 
     img {
         width: 100%;
     }
 }
 
+@media (min-width: 768px) {
+    .image {
+        display: block;
+    }
+
+    .textContainer {
+        transform: translate(-50%, 0);
+        padding: 5rem;
+    }
+}
+
 .textContainer {
     flex-shrink: 0;
     background-color: #fff;
-    padding: 5rem;
+    padding: 2rem;
+    min-width: 320px;
     width: 40vw;
-    transform: translate(-50%, 0);
     h1 {
         margin: 1rem 0;
     }

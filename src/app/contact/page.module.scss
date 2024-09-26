@@ -1,18 +1,19 @@
 .contactUs {
     display: flex;
-    gap: 4rem;
+    gap: 1rem;
     background: #592EA9;
     color: white;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    padding: 2rem 4rem;
+    padding: 2rem;
     text-align: start;
 }
 
 .contactBody {
     text-align: center;
-    width: 60%;
     margin: 5rem auto;
+    max-width: 900px;
+    padding: 0rem 2rem;
 }
 
 .subtitle {
@@ -22,4 +23,11 @@
 
 .text {
     color: #ffffff90;
+}
+
+@media (min-width: 768px) {
+    .contactUs {
+        gap: 4rem;
+        padding: 2rem 4rem;
+    }
 }

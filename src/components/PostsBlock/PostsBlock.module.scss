@@ -1,6 +1,6 @@
 .postsList {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     padding: 4rem 0;
 
@@ -9,6 +9,11 @@
     }
 }
 
+@media (min-width: 768px) {
+    .postsList {
+        grid-template-columns: 6fr 4fr;
+    }
+}
 .postsHeading {
     display: flex;
     justify-content: space-between;

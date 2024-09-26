@@ -1,18 +1,35 @@
 .overview {
     img {
+        display: none;
         width: 100%;
         height: auto;
     }
+}
 
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    background: #F4F0F8;
+    padding: 2rem 2.5rem;
+    padding-top: 3rem;
+    gap: 1.5rem;
+
+    h3 {
+        margin: 1rem 0;
+    }
+}
+
+@media (min-width: 768px) {
     .textBlock {
         display: flex;
-        background: #F4F0F8;
+        flex-direction: row;
         padding: 4rem 5rem;
         padding-top: 6rem;
-        gap: 1.5rem;
+    }
 
-        h3 {
-            margin: 1rem 0;
+    .overview {
+        img {
+            display: block;
         }
     }
 }

@@ -1,7 +1,9 @@
 .card {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
+    margin-top: 3rem;
 
     .text {
         h4 {
@@ -9,20 +11,27 @@
         }
     }
     img {
-        width: 50%;
+        width: 100%;
         height: auto;
     }
 }
 
-.card:nth-child(2n) {
-    .text {
-        order: 2;
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        margin-top: 5rem;
+        gap: 4rem;
+        img {
+            width: 70%;
+        }
     }
-    img {
-        order: 1;
-    }
-}
 
-.card {
-    margin-top: 5rem;
+    .card:nth-child(2n) {
+        .text {
+            order: 2;
+        }
+        img {
+            order: 1;
+        }
+    }
 }

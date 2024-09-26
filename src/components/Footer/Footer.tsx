@@ -44,7 +44,9 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <Nav type="footer"/>
+      <div className={styles.footerNav}>
+        <Nav type="footer" />
+      </div>
       <form className={styles.subscribeForm} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.subscribeTitle}>
           Subscribe to our news letter to get latest updates and news

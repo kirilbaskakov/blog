@@ -1,12 +1,13 @@
 .authorHeader {
     display: flex;
+    flex-direction: column;
     background: #F4F0F8;
     padding: 5rem 4rem;
     gap: 2rem;
     position: relative;
 
     img {
-        max-width: 220px;
+        width: 100%;
         height: auto;
     }
 }
@@ -26,5 +27,15 @@
     p {
         margin-top: 1.25rem;
         margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .authorHeader {
+        flex-direction: row;
+
+        img {
+            max-width: 220px;
+        }
     }
 }

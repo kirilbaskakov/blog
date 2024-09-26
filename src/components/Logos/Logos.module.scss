@@ -1,5 +1,14 @@
 .logos {
     padding: 4rem 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    
+    gap: 4rem;
+
+    img {
+        width: 150px;
+        height: auto;
+    }
 }

@@ -8,18 +8,27 @@
 .container {
     background: #F4F0F8;
     display: flex;
-    padding: 4rem 3rem;
+    flex-direction: column;
+    padding: 1.5rem 1.25rem;
     gap: 3rem;
 
-    div {
-        width: 50%;
-    }
+   
 
     h2, h3 {
         margin: 1rem 0;
     }
 }
 
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        padding: 4rem 3rem;
+
+        div {
+            width: 50%;
+        }
+    }
+}
 
 .link {
     display: block;

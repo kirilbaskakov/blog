@@ -7,6 +7,11 @@ $fs-m: 18px;
   font-family: sans-serif;
 }
 
+html, body {
+    font-family: sans-serif;
+    scrollbar-gutter: stable;
+}
+
 .button {
   display:inline-block;
   border: none;
@@ -30,13 +35,21 @@ a {
 
 
 main {
-  padding: 0 4rem;
+  padding: 0 2rem;
 }
 
 .main {
     margin-top: 4rem;
-    padding: 0 4rem;
+    padding: 0 2rem;
 
+}
+
+@media (min-width: 768px) {
+  main, .main {
+    padding: 0 4rem;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
 }
 
 .display {
