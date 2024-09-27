@@ -18,7 +18,7 @@ const links = [
   },
   {
     href: '/about',
-    title: 'About'
+    title: 'About us'
   },
   {
     href: '/contact',

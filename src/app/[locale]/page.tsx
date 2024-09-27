@@ -9,9 +9,18 @@ import SpecialPost from '@/components/SpecialPost/SpecialPost';
 import Testimonials from '@/components/Testimonials/Testimonials';
 
 import styles from './page.module.css';
+import initTranslations from '../i18n';
+import { I18nextProvider } from 'react-i18next';
 
-export default function Home() {
+export default async function Home({
+  params: { locale }
+}: {
+  params: { locale: string };
+}) {
+  const { t } = await initTranslations(locale, ['default']);
+  console.log(t('blog'));
   return (
+    <I18nextProvider></I18nextProvider>
     <div>
       <Hero />
       <main className={styles.main}>
