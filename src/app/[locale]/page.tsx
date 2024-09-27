@@ -8,21 +8,23 @@ import PostsBlock from '@/components/PostsBlock/PostsBlock';
 import SpecialPost from '@/components/SpecialPost/SpecialPost';
 import Testimonials from '@/components/Testimonials/Testimonials';
 
-import styles from './page.module.css';
+import LazyList from '@/components/LazyList/LazyList';
 
 export default async function Home() {
   return (
     <>
       <Hero />
-      <main className={styles.main}>
-        <PostsBlock />
-        <AboutUs />
-        <Categories />
-        <SpecialPost />
-        <AuthorsList />
-        <Logos />
-        <Testimonials />
-        <JoinUs />
+      <main>
+        <LazyList>
+          <PostsBlock />
+          <AboutUs />
+          <Categories />
+          <SpecialPost />
+          <AuthorsList />
+          <Logos />
+          <Testimonials />
+          <JoinUs />
+        </LazyList>
       </main>
     </>
   );

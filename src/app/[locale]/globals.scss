@@ -10,6 +10,7 @@ $fs-m: 18px;
 html, body {
     font-family: sans-serif;
     scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 
 .button {
@@ -127,4 +128,20 @@ h5 {
   line-height: 1.5em;
   font-weight: 500;
   color: #4C4C4C;
+}
+
+.slide-in-from-right {
+  animation: 0.5s ease-out 0s 1 slideInFromRight forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(0%);
+    opacity: 1;
+  }
 }

@@ -7,6 +7,7 @@ import Posts from '@/components/Posts/Posts';
 
 import styles from './page.module.scss';
 import initTranslations from '@/app/i18n';
+import LazyList from '@/components/LazyList/LazyList';
 
 const Blog = async ({ params: { locale } }: { params: { locale: string } }) => {
   const { t } = await initTranslations(locale, ['default']);
@@ -14,15 +15,17 @@ const Blog = async ({ params: { locale } }: { params: { locale: string } }) => {
     <>
       <BlogHeader />
       <main>
-        <div className={styles.container}>
-          <h1>{t('allPosts')}</h1>
-          <div className={styles.separator} />
-          <div>
-            <Posts />
+        <LazyList>
+          <div className={styles.container}>
+            <h1>{t('allPosts')}</h1>
+            <div className={styles.separator} />
+            <div>
+              <Posts />
+            </div>
           </div>
-        </div>
-        <Categories />
-        <JoinUs />
+          <Categories />
+          <JoinUs />
+        </LazyList>
       </main>
     </>
   );

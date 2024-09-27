@@ -8,6 +8,7 @@ import AuthorsList from '@/components/AuthorsList/AuthorsList';
 import JoinUs from '@/components/JoinUs/JoinUs';
 import Overview from '@/components/Overview/Overview';
 import initTranslations from '@/app/i18n';
+import LazyList from '@/components/LazyList/LazyList';
 
 const aboutUsCards = [
   {
@@ -35,13 +36,15 @@ const About = async ({
 
   return (
     <main className="main">
-      <AboutUsHeader />
-      <Overview />
-      {aboutUsCards.map(({ title, ...params }) => (
-        <AboutUsCard key={title} title={t(title)} {...params} />
-      ))}
-      <AuthorsList />
-      <JoinUs />
+      <LazyList>
+        <AboutUsHeader />
+        <Overview />
+        {aboutUsCards.map(({ title, ...params }) => (
+          <AboutUsCard key={title} title={t(title)} {...params} />
+        ))}
+        <AuthorsList />
+        <JoinUs />
+      </LazyList>
     </main>
   );
 };

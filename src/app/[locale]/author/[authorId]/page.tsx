@@ -5,6 +5,7 @@ import Posts from '@/components/Posts/Posts';
 
 import styles from './page.module.scss';
 import initTranslations from '@/app/i18n';
+import LazyList from '@/components/LazyList/LazyList';
 
 const Author = async ({
   params: { locale, authorId }
@@ -16,8 +17,10 @@ const Author = async ({
     <>
       <AuthorHeader authorId={authorId} />
       <main className={styles.main}>
-        <h1>{t('myPosts')}</h1>
-        <Posts authorId={authorId} />
+        <LazyList>
+          <h1>{t('myPosts')}</h1>
+          <Posts authorId={authorId} />
+        </LazyList>
       </main>
     </>
   );
