@@ -3,6 +3,7 @@ import React, { ChangeEventHandler, useState } from 'react';
 import tags from '@/constants/tags';
 
 import styles from './TagInput.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const TagInput = ({
   onSelect,
@@ -11,6 +12,7 @@ const TagInput = ({
   onSelect: (tag: string) => void;
   onSearch: () => void;
 }) => {
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
@@ -34,7 +36,7 @@ const TagInput = ({
     <div className={styles.search}>
       <div className={styles.inputContainer}>
         <input
-          placeholder="Search for tag..."
+          placeholder={t('searchForTag')}
           value={search}
           onChange={onChange}
           onFocus={onFocus}
@@ -47,12 +49,12 @@ const TagInput = ({
                 {tag}
               </div>
             ))}
-            {currentTags.length == 0 && <div>No results found</div>}
+            {currentTags.length == 0 && <div>{t('noResults')}</div>}
           </div>
         )}
       </div>
       <button className="button" onClick={onSearch}>
-        Search
+        {t('search')}
       </button>
     </div>
   );

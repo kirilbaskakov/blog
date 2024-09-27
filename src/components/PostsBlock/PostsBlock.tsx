@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import Link from 'next/link';
@@ -7,20 +9,22 @@ import getPosts from '@/api/getPosts';
 import FeaturedPost from '../FeaturedPost/FeaturedPost';
 import PostInfo from '../PostInfo/PostInfo';
 import styles from './PostsBlock.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const PostsBlock = () => {
+  const { t } = useTranslation();
   const data = getPosts({ limit: 4 });
 
   return (
     <div className={styles.postsList}>
       <div>
-        <h2>Featured Post</h2>
+        <h2>{t('featuredPost')}</h2>
         <FeaturedPost {...data.posts[0]} />
       </div>
       <div>
         <div className={styles.postsHeading}>
-          <h2>All Posts</h2>
-          <Link href="/blog">View All</Link>
+          <h2>{t('allPosts')}</h2>
+          <Link href="/blog">{t('viewAll')}</Link>
         </div>
         <div>
           {data.posts.map(post => (

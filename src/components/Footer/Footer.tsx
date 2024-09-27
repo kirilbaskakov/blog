@@ -13,8 +13,10 @@ import validateEmail from '@/constants/validateEmail';
 import Nav from '../Nav/Nav';
 import Popup from '../Popup/Popup';
 import styles from './Footer.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const {
     register,
     formState: { errors },
@@ -48,18 +50,16 @@ const Footer = () => {
         <Nav type="footer" />
       </div>
       <form className={styles.subscribeForm} onSubmit={handleSubmit(onSubmit)}>
-        <h2 className={styles.subscribeTitle}>
-          Subscribe to our news letter to get latest updates and news
-        </h2>
+        <h2 className={styles.subscribeTitle}>{t('footerTitle')}</h2>
         <input
           className={classNames({
             [styles.errorInput]: errors.email,
             [styles.subscribeInput]: true
           })}
-          placeholder="Enter your email"
+          placeholder={t('enterEmail')}
           {...register('email', validateEmail)}
         />
-        <button className="button">Subscribe</button>
+        <button className="button">{t('subscribe')}</button>
       </form>
       <div className={styles.contacts}>
         <div className={styles.address}>

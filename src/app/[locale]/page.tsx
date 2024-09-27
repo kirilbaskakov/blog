@@ -10,9 +10,9 @@ import Testimonials from '@/components/Testimonials/Testimonials';
 
 import styles from './page.module.css';
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <main className={styles.main}>
         <PostsBlock />
@@ -24,6 +24,6 @@ export default function Home() {
         <Testimonials />
         <JoinUs />
       </main>
-    </div>
+    </>
   );
 }

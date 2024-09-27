@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import styles from './FeaturedPost.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const FeaturedPost = ({
   id,
@@ -22,6 +23,7 @@ const FeaturedPost = ({
   text: string;
   date: string;
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.card}>
       <Image src={image} alt={`${title} image`} />
@@ -32,7 +34,7 @@ const FeaturedPost = ({
         <h3>{title}</h3>
         <p className="body1 secondary">{text}</p>
         <Link href={`/${id}`} className="button">
-          Read more {'>'}
+          {t('readMore')} {'>'}
         </Link>
       </div>
     </div>

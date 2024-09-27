@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import Image from 'next/image';
@@ -5,15 +7,18 @@ import Image from 'next/image';
 import OverviewImage from '@/assets/Overview.png';
 
 import styles from './Overview.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const Overview = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.overview}>
       <Image src={OverviewImage} alt="Overview image" />
       <div className={styles.textBlock}>
         <div>
-          <p className="cap1">Our mision</p>
-          <h3>Creating valuable content for creatives all around the world</h3>
+          <p className="cap1">{t('ourMission')}</p>
+          <h3>{t('missionTitle')}</h3>
           <p className="body1 secondary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
@@ -22,8 +27,8 @@ const Overview = () => {
           </p>
         </div>
         <div>
-          <p className="cap1">Our vision</p>
-          <h3>A platform that empowers individuals to improve</h3>
+          <p className="cap1">{t('ourVision')}</p>
+          <h3>{t('visionTitle')}</h3>
           <p className="body1 secondary">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Non

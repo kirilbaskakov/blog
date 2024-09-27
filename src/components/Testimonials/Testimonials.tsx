@@ -10,8 +10,10 @@ import reviews from '@/constants/reviews';
 
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
 import styles from './Testimonials.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(0);
 
   const onNext = () => setIndex(index => (index + 1) % reviews.length);
@@ -22,8 +24,8 @@ const Testimonials = () => {
   return (
     <div className={styles.testimonials}>
       <div>
-        <h4 className={styles.subtitle}>TESTIMONIALS</h4>
-        <h3 className={styles.title}>What people say about our blog</h3>
+        <h4 className={styles.subtitle}>{t('testimonials')}</h4>
+        <h3 className={styles.title}>{t('testimonialsTitle')}</h3>
         <p className={styles.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor.
