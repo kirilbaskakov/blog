@@ -6,22 +6,22 @@ import TechnologyIcon from '@/assets/TechnologyIcon.png';
 const categories = [
   {
     icon: BusinessIcon,
-    title: 'Business',
+    key: 'business',
     text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
   },
   {
     icon: StartupIcon,
-    title: 'Startup',
+    key: 'startup',
     text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
   },
   {
     icon: EconomyIcon,
-    title: 'Economy',
+    key: 'economy',
     text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
   },
   {
     icon: TechnologyIcon,
-    title: 'Technology',
+    key: 'technology',
     text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
   }
 ];

@@ -1,0 +1,15 @@
+.select {
+    background-color: transparent;
+    border:none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    option {
+        color: black;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

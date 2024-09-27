@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 
 import VideoModal from '../VideoModal/VideoModal';
+import { useTranslation } from 'react-i18next';
 
 const VideoButton = () => {
+  const { t } = useTranslation();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const onClick = () => setIsVideoOpen(true);
@@ -14,7 +16,7 @@ const VideoButton = () => {
   return (
     <>
       <button className="button secondary" onClick={onClick}>
-        Video about us
+        {t('video')}
       </button>
       {isVideoOpen && <VideoModal onClose={onClose} />}
     </>

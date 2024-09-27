@@ -1,12 +1,17 @@
+'use client';
+
 import React from 'react';
 
 import styles from './PolicyHeader.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const PolicyHeader = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.policyHeader}>
-      <h1>Privacy Policy</h1>
-      <p className="body1 secondary">Last Updated on 27th January 2022</p>
+      <h1>{t('policy')}</h1>
+      <p className="body1 secondary">{t('lastUpd')}</p>
     </div>
   );
 };

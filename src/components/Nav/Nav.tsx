@@ -6,27 +6,30 @@ import Link from 'next/link';
 
 import VideoButton from '../VideoButton/VideoButton';
 import styles from './Nav.module.scss';
+import { useTranslation } from 'react-i18next';
+import LocaleSelect from '../LocaleSelect/LocaleSelect';
 
 const links = [
   {
     href: '/',
-    title: 'Home'
+    key: 'home'
   },
   {
     href: '/blog',
-    title: 'Blog'
+    key: 'blog'
   },
   {
     href: '/about',
-    title: 'About us'
+    key: 'aboutUs'
   },
   {
     href: '/contact',
-    title: 'Contact us'
+    key: 'contactUs'
   }
 ];
 
 const Nav = ({ type }: { type: 'header' | 'footer' }) => {
+  const { t } = useTranslation();
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const onBurgerClicked = () => {
@@ -51,9 +54,9 @@ const Nav = ({ type }: { type: 'header' | 'footer' }) => {
           <>
             <div className={styles.overlay} onClick={onBurgerClose} />
             <div className={styles.dropdown}>
-              {links.map(({ href, title }) => (
-                <Link href={href} key={title} onClick={onBurgerClose}>
-                  {title}
+              {links.map(({ href, key }) => (
+                <Link href={href} key={key} onClick={onBurgerClose}>
+                  {t(key)}
                 </Link>
               ))}
               <VideoButton />
@@ -62,19 +65,20 @@ const Nav = ({ type }: { type: 'header' | 'footer' }) => {
         )}
       </div>
       <Link href="/" className={styles.navTitle}>
-        Modsen client blog
+        {t('title')}
       </Link>
+      <LocaleSelect />
       <div className={styles.links}>
-        {links.map(({ href, title }) => (
-          <Link href={href} key={title} className={styles.navLink}>
-            {title}
+        {links.map(({ href, key }) => (
+          <Link href={href} key={key} className={styles.navLink}>
+            {t(key)}
           </Link>
         ))}
         {type === 'header' ? (
           <VideoButton />
         ) : (
           <Link href="/policy" className={styles.navLink}>
-            Privacy policy
+            {t('policy')}
           </Link>
         )}
       </div>
