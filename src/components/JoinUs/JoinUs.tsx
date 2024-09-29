@@ -12,8 +12,8 @@ const JoinUs = () => {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>{t('joinTitle')}</h3>
-      <p className={styles.subtitle}>
+      <h2>{t('joinTitle')}</h2>
+      <p className="body1 secondary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt.
       </p>

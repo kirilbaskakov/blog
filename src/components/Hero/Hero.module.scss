@@ -1,38 +1,31 @@
+$hero-padding: 6rem 3rem;
+$hero-color: #fff;
+
+$hero-content: 50%;
+$hero-min-width: 300px;
+
+$p-margin: 1rem 0;
+
+$hero-title-margin-top: 1.25rem;
+
 .hero {
-    padding: 6rem 3rem;
+    padding: $hero-padding;
     background-image: url("../../assets/home-hero.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    color: $hero-color;
+    
+    p {
+        margin: $p-margin;
+    }
 }
 
 .heroContent {
-    width: 50%;
-    min-width: 300px;
-}
-
-.heroSubtitle {
-    font-size: 16px;
-    letter-spacing: 3px;
-    font-weight: 600;
-    text-transform: uppercase;
+    width: $hero-content;
+    min-width: $hero-min-width;
 }
 
 .heroTitle {
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 1.25em;
-    margin-top: 1.25rem;
-}
-
-.heroText {
-    font-weight: 400;
-    font-size: 16px;
-    margin: 1rem 0;
-    line-height: 1.5em;
-}
-
-.hero button {
-    margin-top: 2rem;
+    margin-top: $hero-title-margin-top;
 }

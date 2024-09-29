@@ -1,36 +1,53 @@
+@import "@/constants/theme";
+
+$category-card-padding: 1.5rem;
+$category-card-border: 1px solid #6D6E7650;
+$category-card-hover-color: #fad369;
+$category-card-hover-border: 1px solid $category-card-hover-color;
+
+$selected-border: 1px solid $button-bg;
+
+$small-gap: 1rem;
+
+$card-margin-top: 0.5rem;
+
+$icon-size: 48px;
+$icon-bg: #FBF6EA;
+$icon-radius: 8px;
+
 .categoryCard {
     cursor: pointer;
-    padding: 1.5rem;
-    border: 1px solid #6D6E7650;
+    padding: $category-card-padding;
+    border: $category-card-border;
     text-align: start;
 
     &:hover {
-        background: #fad369;
-        border: 1px solid #fad369;
+        background: $category-card-hover-color;
+        border: $category-card-hover-border;
     }
 }
 
 .selected {
-    background: #FFD050;
-    border: 1px solid #FFD050;
+    background: $button-bg;
+    border: $selected-border;
 }   
 
 .small {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: $small-gap;
 }
 
 .categoryCard > * + * {
-    margin-top: 0.5rem;
+    margin-top: $card-margin-top;
 }
 
 .categoryIcon {
-    width: 48px;
-    height: 48px;
-    background: #FBF6EA;
+    width: $icon-size;
+    height: $icon-size;
+    background: $icon-bg;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: $icon-radius;
 }

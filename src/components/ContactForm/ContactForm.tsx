@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import emailjs from '@emailjs/browser';
 import classNames from 'classnames';
@@ -10,7 +11,6 @@ import validateEmail from '@/constants/validateEmail';
 
 import Popup from '../Popup/Popup';
 import styles from './ContactForm.module.scss';
-import { useTranslation } from 'react-i18next';
 
 interface Inputs {
   name: string;

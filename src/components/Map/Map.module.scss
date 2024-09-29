@@ -1,5 +1,8 @@
+$map-margin-top: 4rem;
+$map-height: 350px;
+
 .container {
-    margin-top: 4rem;
+    margin-top: $map-margin-top;
     width: 100%;
-    height: 350px;
+    height: $map-height;
 }

@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { PostType } from '@/types/PostType';
 
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
 import styles from './PostHeader.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const PostHeader = ({ post }: { post: PostType }) => {
   const { t } = useTranslation();

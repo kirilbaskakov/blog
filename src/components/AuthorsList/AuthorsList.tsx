@@ -13,7 +13,7 @@ const AuthorsList = () => {
   const authors = getAuthors();
   return (
     <div className={styles.authorsList}>
-      <h3 className={styles.title}>{t('authorsList')}</h3>
+      <h2>{t('authorsList')}</h2>
       <div className={styles.cards}>
         {authors.map(author => (
           <AuthorCard key={author.name} {...author} />

@@ -1,15 +1,22 @@
+@import "@/constants/theme";
+
+$select-color: #fff;
+$select-padding: 0 0.5rem;
+
+$option-padding: 1rem;
+$option-color: #000;
+
 .select {
     background-color: transparent;
     border:none;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 0 0.5rem;
+    color: $select-color;
+    font-size: $fs-m;
+    font-weight: $fw-semibold;
+    padding: $select-padding;
 
     option {
-        color: black;
-        padding: 1rem;
-        text-indent: 1rem;
+        color: $option-color;
+        padding: $option-padding;
     }
 
     &:focus {

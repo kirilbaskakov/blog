@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import styles from './PostCard.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const PostCard = ({
   id,

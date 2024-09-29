@@ -1,5 +1,6 @@
-import CategoryCard from './CategoryCard';
 import BusinessIcon from '@/assets/BusinessIcon.png';
+
+import CategoryCard from './CategoryCard';
 
 export default {
   component: CategoryCard,

@@ -1,7 +1,31 @@
+@import "@/constants/theme";
+
+$footer-padding-s: 1rem 1.5rem;
+$footer-padding-l: 2rem 3rem;
+$footer-margin-top: 4rem;
+
+$item-margin-top: 2rem;
+
+$title-max-width: 650px;
+
+$form-gap: 1.5rem;
+$form-color: #fff;
+$form-bg: #2E3040;
+$form-padding: 4rem 2rem;
+
+$input-max-width: 400px;
+$input-border: 1px solid #4C4C4C;
+$input-padding: 0.75rem 1rem;
+$input-color: white;
+$input-outline: 1px solid $error-color;
+
+$address-color: #fff;
+$address-line-height: 1.75em;
+
 .footer {
-    background: #232536;
-    padding: 1rem 1.5rem;
-    margin-top: 4rem;
+    background: $color-secondary;
+    padding: $footer-padding-s;
+    margin-top: $footer-margin-top;
 }
 
 .footerNav {
@@ -9,27 +33,25 @@
 }
 
 .footer >  * + * {
-    margin-top: 2rem;
+    margin-top: $item-margin-top;
 }
 
 .subscribeTitle {
-    max-width: 650px;
-    font-size: 36px;
-    font-weight: bold;
+    max-width: $title-max-width;
 }
 
 .subscribeForm {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    color: #fff;
-    background-color: #2E3040;
-    padding: 4rem 2rem;
+    gap: $form-gap;
+    color: $form-color;
+    background-color: $form-bg;
+    padding: $form-padding;
 }
 
 @media (min-width: 768px) {
     .footer {
-        padding: 2rem 3rem;
+        padding: $footer-padding-l;
     }
 
     .footerNav {
@@ -40,24 +62,21 @@
         flex-direction: row;
         align-items: center;
     }
-
-    .subscribeInput {
-        max-width: 400px;
-    }
 }
 
 
 .subscribeInput {
+    max-width: $input-max-width;
     width: 100%;
     margin-left: auto;
     background-color: transparent;
-    border: 1px solid #4C4C4C;
-    padding: 0.75rem 1rem;
-    color: white;
-    font-size: 18px;
+    border: $input-border;
+    padding: $input-padding;
+    color: $input-color;
+    font-size: $fs-m;
 
     &.errorInput {
-        outline: 1px solid red;
+        outline: $input-outline;
     }
 }
 
@@ -67,6 +86,6 @@
 }
 
 .address {
-    color: #fff;
-    line-height: 1.75em;
+    color: $address-color;
+    line-height: $address-line-height;
 }

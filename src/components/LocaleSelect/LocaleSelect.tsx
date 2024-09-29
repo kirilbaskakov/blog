@@ -5,19 +5,10 @@ import { useTranslation } from 'react-i18next';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import styles from './LocaleSelect.module.scss';
+import languages from '@/constants/languages';
 import i18nConfig from '@/i18nConfig';
 
-const languages = [
-  {
-    title: 'English',
-    value: 'en'
-  },
-  {
-    title: 'Русский',
-    value: 'ru'
-  }
-];
+import styles from './LocaleSelect.module.scss';
 
 const LocaleSelect = () => {
   const router = useRouter();

@@ -1,17 +1,24 @@
+$posts-columns-s: 1fr;
+$posts-columns-l: 6fr 4fr;
+$posts-gap: 2rem;
+$posts-padding: 4rem 0;
+
+$h2-margin-bottom: 2rem;
+
 .postsList {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 4rem 0;
+    grid-template-columns: $posts-columns-s;
+    gap: $posts-gap;
+    padding: $posts-padding;
 
     h2 {
-        margin-bottom: 2rem;
+        margin-bottom: $h2-margin-bottom;
     }
 }
 
 @media (min-width: 768px) {
     .postsList {
-        grid-template-columns: 6fr 4fr;
+        grid-template-columns: $posts-columns-l;
     }
 }
 .postsHeading {

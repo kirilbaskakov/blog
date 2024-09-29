@@ -1,5 +1,6 @@
-import AuthorCard from './AuthorCard';
 import AuthorIcon from '@/assets/authorIcon.jpg';
+
+import AuthorCard from './AuthorCard';
 
 export default {
   component: AuthorCard,

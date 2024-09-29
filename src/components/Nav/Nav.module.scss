@@ -1,22 +1,47 @@
+@import "@/constants/theme";
+
+$nav-gap: 1.5rem;
+
+$nav-color: #fff;
+
+$links-gap: 1.5rem;
+
+$burger-width: 30px;
+$burger-height: 25px;
+
+$burger-line-height: 3px;
+$burger-line-color: #eee;
+
+$dropdown-z: 30;
+$dropdown-margin-top: 1rem;
+$dropdown-bg: #f5f5f5;
+
+$dropdown-item-padding: 1rem;
+$dropdown-items-color: #000;
+$dropdown-item-hover: #eee;
+
+$overlay-z: 20;
+$overlay-bg: #00000030;
+
 .nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.5rem;
+    gap: $nav-gap;
 }
 
 .navTitle {
-    color: #fff;
+    color: $nav-color;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: $fw-bold;
+    font-size: $fs-xl;
     margin-right: auto;
 }
 
 .navLink {
-    color: #fff;
+    color: $nav-color;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: $fw-normal;
 }
 
 .links {
@@ -32,7 +57,7 @@
        display: flex;
        justify-content: flex-end;
        align-items: center;
-       gap: 1.5rem;
+       gap: $links-gap;
     }
 }
 
@@ -42,47 +67,47 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 25px;
+    width: $burger-width;
+    height: $burger-height;
 
     > div {
         width: 100%;
-        height: 3px;
-        background-color: #eee;
+        height: $burger-line-height;
+        background-color: $burger-line-color;
     }
 }
 
 .dropdown {
-    z-index: 30;
+    z-index: $dropdown-z;
     position: absolute;
     left: 0;
-    margin-top: 1rem;
-    background-color: #f5f5f5;
+    margin-top: $dropdown-margin-top;
+    background-color: $dropdown-bg;
     width: 100vw;
     text-align: center;
 
     > * {
         margin: 0 auto;
         display: block;
-        padding: 1rem;
-        color: #000;
+        padding: $dropdown-item-padding;
+        color: $dropdown-items-color;
         text-decoration: none;
-        font-weight: 600;
-        font-size: 18px;
+        font-weight: $fw-semibold;
+        font-size: $fs-m;
 
         &:hover {
             cursor: pointer;
-            background-color: #eee;
+            background-color: $dropdown-item-hover;
         }
     }
 }
 
 .overlay {
-    z-index: 20;
+    z-index: $overlay-z;
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #00000030;
+    background-color: $overlay-bg;
 }

@@ -14,7 +14,6 @@ const LazyList = ({ children }: { children: ReactNode }) => {
     }
     const observer = new IntersectionObserver(entries => {
       const target = entries[0];
-      console.log(1);
       if (target.isIntersecting) {
         setCount(count => count + 1);
       }

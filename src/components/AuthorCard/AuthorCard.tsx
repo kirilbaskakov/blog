@@ -29,8 +29,8 @@ const AuthorCard = ({
   return (
     <div className={styles.card} onClick={onClick}>
       <Image src={icon} alt={name} className={styles.image} />
-      <h4 className={styles.title}>{name}</h4>
-      <p className={styles.job}>{job}</p>
+      <h3>{name}</h3>
+      <p className="body1 secondary">{job}</p>
       <Image src={SocialWrapper} alt="Social icons" />
     </div>
   );

@@ -1,20 +1,28 @@
+$post-info-padding: 1.5rem;
+$post-margin-top: 1.5rem;
+$post-hover: #FBF6EA;
+
+$h4-margin-top: 0.5rem;
+
+$title-color: #000;
+
 .postInfo {
     cursor: pointer;
-    padding: 1.5rem;
+    padding: $post-info-padding;
 
     h4 {
-        margin-top: 0.5rem;
+        margin-top: $post-margin-top;
     }
 
     .title {
-        color: black;
+        color: $title-color;
     }
 
     &:hover {
-        background: #FBF6EA;
+        background: $post-hover;
     }
 
     & + & {
-        margin-top: 1.5rem;
+        margin-top: $post-margin-top;
     }
 }

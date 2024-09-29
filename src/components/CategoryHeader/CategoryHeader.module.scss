@@ -1,13 +1,21 @@
+@import "@/constants/theme";
+
+$header-padding: 5rem 0;
+
+$content-max-width: 450px;
+
+$item-margin-top: 1rem;
+
 .categoryHeader {
-    padding: 5rem 0;
-    background: #F4F0F8;
+    padding: $header-padding;
+    background: $container-background
 }
 
 .content {
     margin: 0 auto;
-    max-width: 450px;
+    max-width: $content-max-width;
     text-align: center;
     > * + * {
-        margin-top: 1rem;
+        margin-top: $item-margin-top;
     }
 }

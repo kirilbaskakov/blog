@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
-import styles from './FeaturedPost.module.scss';
 import { showDate } from '@/utils';
+
+import styles from './FeaturedPost.module.scss';
 
 const FeaturedPost = ({
   id,

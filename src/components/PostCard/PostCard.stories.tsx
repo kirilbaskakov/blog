@@ -1,5 +1,6 @@
-import PostCard from './PostCard';
 import PostImage1 from '@/assets/post1.jpg';
+
+import PostCard from './PostCard';
 
 export default {
   component: PostCard,

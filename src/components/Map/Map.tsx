@@ -12,6 +12,7 @@ import mapMarkers from './mapMarkers';
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef<MapType | null>(null);
+
   useEffect(() => {
     if (!mapContainer.current) return;
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAP_ACCESS_KEY!;
@@ -32,6 +33,7 @@ const Map = () => {
       }
     };
   }, [mapContainer]);
+
   return <div ref={mapContainer} className={styles.container}></div>;
 };
 

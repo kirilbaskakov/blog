@@ -1,14 +1,19 @@
+$logos-padding: 4rem 0;
+$logos-gap: 4rem;
+
+$img-width: 150px;
+
 .logos {
-    padding: 4rem 0;
+    padding: $logos-padding;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     
-    gap: 4rem;
+    gap: $logos-gap;
 
     img {
-        width: 150px;
+        width: $img-width;
         height: auto;
     }
 }

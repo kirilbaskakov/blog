@@ -1,7 +1,12 @@
+$author-info-gap: 1rem;
+$author-info-animation: 1.6s ease-out 0s 1 appear forwards;
+
+$author-icon-size: 48px;
+
 .authorInfo {
     display: flex;
-    gap: 1rem;
-    animation: 1.6s ease-out 0s 1 appear forwards;
+    gap: $author-info-gap;
+    animation: $author-info-animation;
 }
 
 @keyframes appear {
@@ -15,21 +20,8 @@
 }
 
 .authorIcon {
-    width: 48px;
-    height: 48px;
+    width: $author-icon-size;
+    height: $author-icon-size;
     object-fit: cover;
     border-radius: 50%;
-}
-
-.authorTitle {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25em;
-    color: black;
-}
-
-.authorSubtitle {
-    font-size: 16px;
-    line-height: 1.5em;
-    color: #6D6E76;
 }

@@ -1,9 +1,14 @@
+$header-padding: 4rem;
+$header-max-width: 750px;
+
+$h1-margin: 1rem 0;
+
 .postHeader {
-    padding: 4rem;
-    max-width: 750px;
+    padding: $header-padding;
+    max-width: $header-max-width;
     margin: 0 auto;
 
     h1 {
-        margin: 1rem 0;
+        margin: $h1-margin;
     }
 }

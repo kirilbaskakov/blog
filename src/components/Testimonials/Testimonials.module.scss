@@ -1,16 +1,42 @@
+@import "@/constants/theme";
+
+$testimonials-bg: #FBF6EA;
+$testimonails-padding-s: 1.5rem 3rem;
+$testimonails-padding-l: 3rem 6rem;
+$testimonials-gap-s: 1.5rem;
+$testimonials-gap-l: 6rem;
+
+$title-margin-top: 0.5rem;
+
+$text-margin-top: 1.25rem;
+
+$review-text-animation: 0.8s ease-out 0s 1 forwards;
+
+$separator-border: 1px solid #6D6E76;
+
+$review-info-gap: 1rem;
+$review-info-margin-top: 5rem;
+
+$arrows-gap: 1rem;
+
+$arrow-prev-size: 48px;
+$arrow-prev-color: #fff;
+$arrow-next-size: 62px;
+$arrow-next-color: #000;
+
 .testimonials {
     display: flex;
     flex-direction: column;
-    background: #FBF6EA;
-    padding: 1.5rem 3rem;
-    gap: 1.5rem;
+    background: $testimonials-bg;
+    padding: $testimonails-padding-s;
+    gap: $testimonials-gap-s;
 }
 
 @media (min-width: 1024px) {
     .testimonials {
         flex-direction: row;
-        gap: 6rem;
-        padding: 4rem 6rem;
+        gap: $testimonials-gap-l;
+        padding: $testimonails-padding-l;
     }
 }
 
@@ -19,31 +45,18 @@
 }
 
 .title {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.25em;
-    margin-top: 0.5rem;
-}
-
-.subtitle {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.25em;
-    letter-spacing: 3px;
+    margin-top: $title-margin-top;
 }
 
 .text {
-    margin-top: 1.25rem;
-    font-size: 16px;
-    color: #232536;
-    line-height: 1.5em;
+    margin-top: $text-margin-top;
 }
 
 .reviewText {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25em;
-    animation: 0.8s ease-out 0s 1 forwards;
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    line-height: $line-height-s;
+    animation: $review-text-animation;
 
     &.animateLeft {
         animation-name: slideInFromLeft;
@@ -114,16 +127,16 @@
 }
 
 .separator {
-    border-left: 1px solid #6D6E76;
+    border-left: $separator-border;
 }
 
 .reviewInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: $review-info-gap;
     justify-content: space-between;
-    margin-top: 5rem;
+    margin-top: $review-info-margin-top;
 }
 
 @media (min-width: 768px) {
@@ -136,28 +149,28 @@
 .arrows {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: $arrows-gap;
 }
 
 .arrowPrev {
     border: none;
-    width: 48px;
-    height: 48px;
+    width: $arrow-prev-size;
+    height: $arrow-prev-size;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: $arrow-prev-color;
     cursor: pointer;
 }
 .arrowNext {
     border: none;
-    width: 62px;
-    height: 62px;
+    width: $arrow-next-size;
+    height: $arrow-next-size;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: $arrow-next-color;
     cursor: pointer;
 }

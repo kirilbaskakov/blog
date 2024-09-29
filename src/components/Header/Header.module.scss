@@ -1,8 +1,13 @@
+@import "@/constants/theme";
+
+$header-z: 10;
+$header-padding: 1rem 1.5rem;
+
 .header {
     position: sticky;
-    z-index: 10;
+    z-index: $header-z;
     top: 0;
-    background-color: #232536;
-    padding: 1rem 1.5rem;
+    background-color: $color-secondary;
+    padding: $header-padding;
 }
 

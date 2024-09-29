@@ -1,32 +1,44 @@
+$container-gap: 2rem;
+$container-padding: 0 3.5rem;
+$container-margin-bottom-sm: 1rem;
+$container-margin-bottom-lg: -60px;
+
+$card-bg: #fff;
+$card-padding-sm: 0.5rem;
+$card-padding-lg: 3rem;
+$container-z: 1;
+
+$h-margin-top: 0.5rem;
+
 .container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    padding: 0 3.5rem;
-    margin-bottom: 1rem;
+    gap: $container-gap;
+    padding: $container-padding;
+    margin-bottom: $container-margin-bottom-sm;
 }
 
 .card {
-    background-color: #fff;
-    padding: 0.5rem;
+    background-color: $card-bg;
+    padding: $card-padding-sm;
 
     h1 {
-        margin-top: 0.5rem;
+        margin-top: $h-margin-top;
     }
 
 }
 
 @media (min-width: 768px) {
     .container {
-        z-index: 1;
+        z-index: $container-z;
         flex-direction: row;
-        margin-bottom: -60px;
+        margin-bottom: $container-margin-bottom-lg;
     }
 
     .card {
-        padding: 3rem;
+        padding: $card-padding-lg;
     }
 }

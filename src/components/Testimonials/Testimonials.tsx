@@ -32,9 +32,9 @@ const Testimonials = () => {
   return (
     <div className={styles.testimonials}>
       <div>
-        <h4 className={styles.subtitle}>{t('testimonials')}</h4>
-        <h3 className={styles.title}>{t('testimonialsTitle')}</h3>
-        <p className={styles.text}>
+        <p className="cap1">{t('testimonials')}</p>
+        <h2 className={styles.title}>{t('testimonialsTitle')}</h2>
+        <p className={styles.text + ' body1 secondary'}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor.
         </p>

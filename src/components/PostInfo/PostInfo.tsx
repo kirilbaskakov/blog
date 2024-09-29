@@ -1,13 +1,14 @@
 'use client';
 
 import React, { MouseEventHandler } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+import { showDate } from '@/utils';
 
 import styles from './PostInfo.module.scss';
-import { useRouter } from 'next/navigation';
-import { showDate } from '@/utils';
-import { useTranslation } from 'react-i18next';
 
 const PostInfo = ({
   id,

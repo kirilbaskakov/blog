@@ -1,31 +1,36 @@
+$card-padding: 2rem 1rem;
+$card-bg: #F4F4F4;
+$card-hover-bg: #EBEBEB;
+
+$h3-margin-top: 1rem;
+$p-margin-top: 0.5rem;
+$p-margin-bottom: 1.25rem;
+
+$image-size: 128px;
+
 .card {
     cursor: pointer;
-    padding: 2rem 1rem;
-    background: #F4F4F4;
+    padding: $card-padding;
+    background: $card-bg;
     flex: 1;
 
     &:hover {
-          background: #EBEBEB;
+        background: $card-hover-bg;
     }
 
-}
+    h3 {
+        margin-top: $h3-margin-top;
+    }
 
-.title {
-    font-weight: 700;
-    font-size: 28px;
-    margin-top: 1rem;
-}
-
-.job {
-    font-size: 14px;
-    color: #6D6E76;
-    margin-top: 0.5rem;
-    margin-bottom: 1.25rem;
+    > p {
+        margin-top: $p-margin-top;
+        margin-bottom: $p-margin-bottom;
+    }
 }
 
 .image {
-    width: 128px;
-    height: 128px;
+    width: $image-size;
+    height: $image-size;
     object-fit: cover;
     border-radius: 100%;
 }

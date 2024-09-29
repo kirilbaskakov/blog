@@ -23,10 +23,9 @@ const AuthorInfo = ({ authorId }: { authorId: number }) => {
       />
       <div>
         <Link href={`/author/${authorId}`}>
-          {' '}
-          <h4 className={styles.authorTitle}>{author.name}</h4>
+          <h4>{author.name}</h4>
         </Link>
-        <p className={styles.authorSubtitle}>{author.origin}</p>
+        <p className="body1 secondary">{author.origin}</p>
       </div>
     </div>
   );

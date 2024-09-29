@@ -1,9 +1,10 @@
 import React, { ChangeEventHandler, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import styles from './TagInput.module.scss';
 import getTags from '@/api/getTags';
 import { TagType } from '@/types/TagType';
+
+import styles from './TagInput.module.scss';
 
 const TagInput = ({
   onSelect,

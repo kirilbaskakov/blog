@@ -1,3 +1,13 @@
+@import "@/constants/theme";
+
+$text-block-padding-s: 2rem 2.5rem;
+$text-block-padding-top-s: 3rem;
+$text-block-padding-l: 4rem 5rem;
+$text-block-padding-top-l: 6rem;
+$text-block-gap: 1.5rem;
+
+$h-margin: 1rem 0;
+
 .overview {
     img {
         display: none;
@@ -9,13 +19,13 @@
 .textBlock {
     display: flex;
     flex-direction: column;
-    background: #F4F0F8;
-    padding: 2rem 2.5rem;
-    padding-top: 3rem;
-    gap: 1.5rem;
+    background: $container-background;
+    padding: $text-block-padding-s;
+    padding-top: $text-block-padding-top-s;
+    gap: $text-block-gap;
 
     h3 {
-        margin: 1rem 0;
+        margin: $h-margin;
     }
 }
 
@@ -23,8 +33,8 @@
     .textBlock {
         display: flex;
         flex-direction: row;
-        padding: 4rem 5rem;
-        padding-top: 6rem;
+        padding: $text-block-padding-l;
+        padding-top: $text-block-padding-top-l;
     }
 
     .overview {

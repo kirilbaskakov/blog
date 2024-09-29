@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import getTags from '@/api/getTags';
 import categories from '@/constants/categories';
+import { TagType } from '@/types/TagType';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
 import TagCard from '../TagCard/TagCard';
 import TagInput from '../TagInput/TagInput';
 import styles from './CategorySidebar.module.scss';
-import { TagType } from '@/types/TagType';
-import getTags from '@/api/getTags';
 
 const CategorySidebar = ({ category }: { category: string }) => {
   const { t, i18n } = useTranslation();
@@ -31,8 +31,6 @@ const CategorySidebar = ({ category }: { category: string }) => {
       title: allTags.find(tag => tag.value === value)?.title ?? ''
     }));
   });
-
-  console.log(tags);
 
   const onTagSelect = (tag: TagType) =>
     !tags.find(({ value }) => value === tag.value) &&
