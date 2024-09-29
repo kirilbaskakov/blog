@@ -21,6 +21,7 @@
 
 @media (min-width: 768px) {
     .container {
+        z-index: 1;
         flex-direction: row;
         margin-bottom: -60px;
     }

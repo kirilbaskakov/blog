@@ -1,14 +1,14 @@
 import React from 'react';
 
+import initTranslations from '@/app/i18n';
 import About1 from '@/assets/about1.png';
 import About2 from '@/assets/about2.png';
 import AboutUsCard from '@/components/AboutUsCard/AboutUsCard';
 import AboutUsHeader from '@/components/AboutUsHeader/AboutUsHeader';
 import AuthorsList from '@/components/AuthorsList/AuthorsList';
 import JoinUs from '@/components/JoinUs/JoinUs';
-import Overview from '@/components/Overview/Overview';
-import initTranslations from '@/app/i18n';
 import LazyList from '@/components/LazyList/LazyList';
+import Overview from '@/components/Overview/Overview';
 
 const aboutUsCards = [
   {

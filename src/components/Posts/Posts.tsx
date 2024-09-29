@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useSearchParams } from 'next/navigation';
 
@@ -8,7 +9,6 @@ import getPosts from '@/api/getPosts';
 
 import PostCard from '../PostCard/PostCard';
 import styles from './Posts.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const LIMIT = 4;
 
@@ -28,21 +28,25 @@ const Posts = ({
     [searchParams]
   );
 
+  const scrollToTop = () => {
+    setTimeout(() => {
+      if (listRef.current) {
+        listRef.current.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }, 0);
+  };
+
   const onPrevPage = () => {
     setPage(page => page - 1);
+    scrollToTop();
   };
 
   const onNextPage = () => {
     setPage(page => page + 1);
+    scrollToTop();
   };
-
-  useEffect(() => {
-    if (listRef.current) {
-      listRef.current.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  }, [page]);
 
   const data = useMemo(
     () => getPosts({ page, authorId, category, tags, limit: LIMIT }),
@@ -59,14 +63,12 @@ const Posts = ({
       {pages > 1 && (
         <div className={styles.buttons}>
           <button disabled={page == 1} onClick={onPrevPage}>
-            <h4>
-              {'<'} {t('prev')}
-            </h4>
+            <h4>{'<'}</h4>
+            <h4>{t('prev')}</h4>
           </button>
           <button disabled={page === pages} onClick={onNextPage}>
-            <h3>
-              {t('next')} {'>'}
-            </h3>
+            <h3>{t('next')}</h3>
+            <h3>{'>'}</h3>
           </button>
         </div>
       )}

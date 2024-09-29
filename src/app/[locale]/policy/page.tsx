@@ -1,9 +1,9 @@
 import React from 'react';
 
+import LazyList from '@/components/LazyList/LazyList';
 import PolicyHeader from '@/components/PolicyHeader/PolicyHeader';
 
 import styles from './page.module.scss';
-import LazyList from '@/components/LazyList/LazyList';
 const page = () => {
   return (
     <>

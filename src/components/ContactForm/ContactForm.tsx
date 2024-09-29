@@ -10,6 +10,7 @@ import validateEmail from '@/constants/validateEmail';
 
 import Popup from '../Popup/Popup';
 import styles from './ContactForm.module.scss';
+import { useTranslation } from 'react-i18next';
 
 interface Inputs {
   name: string;
@@ -26,7 +27,7 @@ const ContactForm = () => {
     formState: { errors },
     reset
   } = useForm<Inputs>();
-
+  const { t } = useTranslation();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const onPopupClose = () => setIsPopupOpen(false);
@@ -50,55 +51,55 @@ const ContactForm = () => {
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <input
-        placeholder="Full Name"
+        placeholder={t('fullName')}
         className={classNames({ [styles.errorInput]: errors.name })}
         {...register('name', {
-          required: 'Name is required',
+          required: t('nameRequired'),
           minLength: {
             value: 5,
-            message: 'Name must be longer than 4 characters'
+            message: t('nameLonger')
           },
           maxLength: {
             value: 49,
-            message: 'Name must be shorter than 50 characters'
+            message: t('nameShorter')
           }
         })}
       />
       <p className={styles.error}>{errors.name?.message}</p>
       <input
-        placeholder="Your Email"
+        placeholder={t('yourEmail')}
         className={classNames({ [styles.errorInput]: errors.email })}
-        {...register('email', validateEmail)}
+        {...register('email', validateEmail(t))}
       />
       <p className={styles.error}>{errors.email?.message}</p>
       <input
-        placeholder="Query Related"
+        placeholder={t('queryRelated')}
         className={classNames({ [styles.errorInput]: errors.query })}
         {...register('query', {
-          required: 'Query is required',
+          required: t('queryRequired'),
           maxLength: {
             value: 49,
-            message: 'Query must be shorter than 50 characters'
+            message: t('queryShorter')
           }
         })}
       />
       <p className={styles.error}>{errors.query?.message}</p>
       <textarea
-        placeholder="Message"
+        placeholder={t('message')}
         className={classNames({ [styles.errorInput]: errors.message })}
         {...register('message', {
-          required: 'Message is required',
+          required: t('messageRequired'),
           maxLength: {
             value: 499,
-            message: 'Query must be shorter than 500 characters'
+            message: t('messageShorter')
           }
         })}
       />
       <p className={styles.error}>{errors.message?.message}</p>
-      <button className="button">Send message</button>
+      <button className="button">{t('sendMessage')}</button>
       {isPopupOpen && (
         <Popup
-          text="Your message has been sent successfully"
+          text={t('contactMsg')}
           isOpen={isPopupOpen}
           onClose={onPopupClose}
         />

@@ -1,16 +1,21 @@
 .postCard {
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
 
     .textBlock {
-        width: 50%;
+        width: 100%;
+    }
+
+    &:hover {
+        background: #FBF6EA;
     }
 
     img {
         flex-shrink: 0;
-        width: 30%;
+        width: 100%;
         object-fit: cover;
     }
 
@@ -21,4 +26,20 @@
 
 .postCard + .postCard {
     margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .postCard {
+        flex-direction: row;
+
+        .textBlock {
+            width: 50%;
+        }
+
+        img {
+            width: 30%;
+        }
+    }
+
+    
 }

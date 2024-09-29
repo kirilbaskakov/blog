@@ -1,10 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import styles from './FeaturedPost.module.scss';
-import { useTranslation } from 'react-i18next';
+import showDate from '@/utils/showDate';
 
 const FeaturedPost = ({
   id,
@@ -21,15 +22,16 @@ const FeaturedPost = ({
   author: string;
   authorId: number;
   text: string;
-  date: string;
+  date: number;
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className={styles.card}>
       <Image src={image} alt={`${title} image`} />
       <div className={styles.text}>
         <p className="label1">
-          By <Link href={`/author/${authorId}`}>{author}</Link> | {date}
+          By <Link href={`/author/${authorId}`}>{author}</Link> |{' '}
+          {showDate(date, i18n.language)}
         </p>
         <h3>{title}</h3>
         <p className="body1 secondary">{text}</p>

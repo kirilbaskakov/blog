@@ -14,6 +14,10 @@
     }
 }
 
+.carousel {
+    overflow-x: hidden;
+}
+
 .title {
     font-weight: 700;
     font-size: 36px;
@@ -39,6 +43,74 @@
     font-size: 24px;
     font-weight: 700;
     line-height: 1.25em;
+    animation: 0.8s ease-out 0s 1 forwards;
+
+    &.animateLeft {
+        animation-name: slideInFromLeft;
+    }
+
+    &.animateRight {
+        animation-name: slideInFromRight;
+    }
+
+    &.animateToLeft {
+        transform: translateY(-100%);
+        animation-name: slideOutToLeft;
+    }
+
+    &.animateToRight {
+        transform: translateY(-100%);
+        animation-name: slideOutToRight;
+    }
+
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-180%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(180%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translate(0%, -100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-180%, -100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translate(0%, -100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(180%, -100%);
+        opacity: 0;
+    }
 }
 
 .separator {

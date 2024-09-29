@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
 import styles from './JoinUs.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const JoinUs = () => {
   const { t } = useTranslation();

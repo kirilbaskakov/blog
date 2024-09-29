@@ -1,9 +1,12 @@
 'use client';
 
 import React, { ChangeEventHandler } from 'react';
-import styles from './LocaleSelect.module.scss';
 import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/navigation';
+
+import { usePathname, useRouter } from 'next/navigation';
+
+import styles from './LocaleSelect.module.scss';
+import i18nConfig from '@/i18nConfig';
 
 const languages = [
   {
@@ -19,14 +22,26 @@ const languages = [
 const LocaleSelect = () => {
   const router = useRouter();
   const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  const currentPathname = usePathname();
 
   const handleChange: ChangeEventHandler<HTMLSelectElement> = event => {
     const newLocale = event.target.value;
-    const currentPath = window.location.pathname;
 
-    const withoutCurrentLocale = currentPath.replace('/ru', '');
-    router.push(`/${newLocale}${withoutCurrentLocale}`);
-    i18n.changeLanguage(newLocale);
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
+
+    if (currentLocale === i18nConfig.defaultLocale) {
+      router.push('/' + newLocale + currentPathname);
+    } else {
+      router.push(
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+      );
+    }
+
+    router.refresh();
   };
   return (
     <select

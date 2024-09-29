@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +9,6 @@ import Link from 'next/link';
 import SpecialPostImage from '@/assets/SpeciaPost.webp';
 
 import styles from './SpecialPost.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const SpecialPost = () => {
   const { t } = useTranslation();

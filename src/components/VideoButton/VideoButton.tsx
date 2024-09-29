@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import VideoModal from '../VideoModal/VideoModal';
-import { useTranslation } from 'react-i18next';
 
 const VideoButton = () => {
   const { t } = useTranslation();

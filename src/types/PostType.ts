@@ -4,7 +4,7 @@ export type PostType = {
   id: number;
   authorId: number;
   author: string;
-  date: string;
+  date: number;
   category: string;
   image: StaticImageData;
   title: string;

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
@@ -9,7 +10,6 @@ import getPosts from '@/api/getPosts';
 import FeaturedPost from '../FeaturedPost/FeaturedPost';
 import PostInfo from '../PostInfo/PostInfo';
 import styles from './PostsBlock.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const PostsBlock = () => {
   const { t } = useTranslation();

@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
+import LocaleSelect from '../LocaleSelect/LocaleSelect';
 import VideoButton from '../VideoButton/VideoButton';
 import styles from './Nav.module.scss';
-import { useTranslation } from 'react-i18next';
-import LocaleSelect from '../LocaleSelect/LocaleSelect';
 
 const links = [
   {

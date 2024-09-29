@@ -1,11 +1,11 @@
 import React from 'react';
 
+import initTranslations from '@/app/i18n';
 import ContactForm from '@/components/ContactForm/ContactForm';
+import LazyList from '@/components/LazyList/LazyList';
 import Map from '@/components/Map/Map';
 
 import styles from './page.module.scss';
-import initTranslations from '@/app/i18n';
-import LazyList from '@/components/LazyList/LazyList';
 
 const Contact = async ({
   params: { locale }
@@ -15,7 +15,7 @@ const Contact = async ({
   const { t } = await initTranslations(locale, ['default']);
 
   return (
-    <div className={styles.contactBody}>
+    <main className={styles.contactBody}>
       <LazyList>
         <div>
           <p className="cap3">{t('contactUs')}</p>
@@ -42,7 +42,7 @@ const Contact = async ({
         <ContactForm />
         <Map />
       </LazyList>
-    </div>
+    </main>
   );
 };
 

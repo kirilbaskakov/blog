@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import getAuthors from '@/api/getAuthors';
 
 import AuthorCard from '../AuthorCard/AuthorCard';
 import styles from './AuthorList.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const AuthorsList = () => {
   const { t } = useTranslation();

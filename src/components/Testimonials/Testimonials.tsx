@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 
@@ -10,16 +11,23 @@ import reviews from '@/constants/reviews';
 
 import AuthorInfo from '../AuthorInfo/AuthorInfo';
 import styles from './Testimonials.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const Testimonials = () => {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
+  const [animationType, setAnimationType] = useState<
+    'animateLeft' | 'animateRight'
+  >('animateLeft');
 
-  const onNext = () => setIndex(index => (index + 1) % reviews.length);
+  const onNext = () => {
+    setIndex(index => (index + 1) % reviews.length);
+    setAnimationType('animateRight');
+  };
 
-  const onPrev = () =>
+  const onPrev = () => {
     setIndex(index => (index - 1 + reviews.length) % reviews.length);
+    setAnimationType('animateLeft');
+  };
 
   return (
     <div className={styles.testimonials}>
@@ -32,10 +40,36 @@ const Testimonials = () => {
         </p>
       </div>
       <div className={styles.separator} />
-      <div>
-        <p className={styles.reviewText}>{reviews[index].text}</p>
+      <div className={styles.carousel}>
+        <div style={{ position: 'relative' }}>
+          <p
+            className={styles.reviewText + ' ' + styles[animationType]}
+            key={reviews[index].text}
+          >
+            {reviews[index].text}
+          </p>
+          {animationType == 'animateLeft' ? (
+            <p
+              className={styles.reviewText + ' ' + styles.animateToRight}
+              key={reviews[(index + 1) % reviews.length].text}
+            >
+              {reviews[(index + 1) % reviews.length].text}
+            </p>
+          ) : (
+            <p
+              className={styles.reviewText + ' ' + styles.animateToLeft}
+              key={reviews[(index - 1 + reviews.length) % reviews.length].text}
+            >
+              {reviews[(index - 1 + reviews.length) % reviews.length].text}
+            </p>
+          )}
+        </div>
+
         <div className={styles.reviewInfo}>
-          <AuthorInfo authorId={reviews[index].authorId} />
+          <AuthorInfo
+            key={reviews[index].authorId}
+            authorId={reviews[index].authorId}
+          />
           <div className={styles.arrows}>
             <button className={styles.arrowPrev} onClick={onPrev}>
               <Image src={PrevIcon} alt="Left arrow" />

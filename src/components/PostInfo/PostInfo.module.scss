@@ -13,4 +13,8 @@
     &:hover {
         background: #FBF6EA;
     }
+
+    & + & {
+        margin-top: 1.5rem;
+    }
 }

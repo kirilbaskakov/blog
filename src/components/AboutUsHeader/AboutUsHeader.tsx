@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './AboutUsHeader.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const AboutUsHeader = () => {
   const { t } = useTranslation();

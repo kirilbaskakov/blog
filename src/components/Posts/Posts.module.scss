@@ -11,14 +11,23 @@
         display: flex;
         gap: 1.5rem;
         justify-content: center;
+        align-items: center;
 
         button {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap-reverse;
             cursor: pointer;
             border: none;
             background-color: transparent;
 
             &:disabled {
                 color: #6D6E76;
+            }
+
+            &:first-child {
+                flex-wrap: wrap;
             }
         }
 

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import emailjs from '@emailjs/browser';
 import classNames from 'classnames';
@@ -13,7 +14,6 @@ import validateEmail from '@/constants/validateEmail';
 import Nav from '../Nav/Nav';
 import Popup from '../Popup/Popup';
 import styles from './Footer.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -57,7 +57,7 @@ const Footer = () => {
             [styles.subscribeInput]: true
           })}
           placeholder={t('enterEmail')}
-          {...register('email', validateEmail)}
+          {...register('email', validateEmail(t))}
         />
         <button className="button">{t('subscribe')}</button>
       </form>
@@ -70,7 +70,7 @@ const Footer = () => {
       </div>
       {isPopupOpen && (
         <Popup
-          text="You have successfully subscribed"
+          text={t('subscribeMsg')}
           isOpen={isPopupOpen}
           onClose={onPopupClose}
         />

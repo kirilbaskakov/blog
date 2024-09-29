@@ -4,27 +4,31 @@ import React from 'react';
 
 import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import styles from './CategoryCard.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const CategoryCard = ({
   icon,
   title,
+  categoryKey,
   text,
   type = 'large',
   selected = false
 }: {
   icon: StaticImageData;
+  categoryKey: string;
   title: string;
   text: string;
   type?: 'small' | 'large';
   selected?: boolean;
 }) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const onClick = () => {
-    router.push(`/blog/${title.toLocaleLowerCase()}`);
+    router.push(`/blog/${categoryKey}?${searchParams.toString()}`);
   };
 
   return (

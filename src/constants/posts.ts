@@ -8,68 +8,68 @@ const posts = [
     id: 1,
     authorId: 1,
     author: 'Andrew Johnson',
-    date: '12 Aug, 2024',
+    date: 1660262400000,
     image: PostImage1,
-    category: 'Startup',
+    category: 'startup',
     title: 'Design tips for designers that cover everything you need',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Screen', 'Experience']
+    tags: ['screen', 'experience']
   },
   {
     id: 2,
     authorId: 1,
     author: 'Andrew Johnson',
-    date: '14 Aug, 2024',
+    date: 1660262400000,
     image: PostImage2,
-    category: 'Business',
+    category: 'business',
     title: 'How to build rapport with your web design clients',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Business', 'Experience']
+    tags: ['business', 'experience']
   },
   {
     id: 3,
     authorId: 2,
     author: 'John Doe',
-    date: '10 Aug, 2024',
+    date: 1660262400000,
     image: PostImage3,
-    category: 'Economy',
+    category: 'economy',
     title:
       'Logo design trends to avoid in 2022Logo design trends to avoid in 2022',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Marketing', 'Life']
+    tags: ['marketing', 'life']
   },
   {
     id: 4,
     authorId: 2,
     author: 'John Doe',
-    date: '20 Aug, 2024',
+    date: 1660262400000,
     image: PostImage4,
-    category: 'Technology',
+    category: 'technology',
     title: '8 Figma design systems you can download for free today',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Technology', 'Life']
+    tags: ['technology', 'life']
   },
   {
     id: 5,
     authorId: 1,
     author: 'Andrew Johnson',
-    date: '21 Aug, 2024',
+    date: 1660262400000,
     image: PostImage4,
-    category: 'Technology',
+    category: 'technology',
     title: 'Eprehenderit in voluptate velit esse',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Technology', 'Life']
+    tags: ['technology', 'life']
   },
   {
     id: 6,
     authorId: 1,
     author: 'Andrew Johnson',
-    date: '25 Aug, 2024',
+    date: 1660262400000,
     image: PostImage4,
-    category: 'Business',
+    category: 'business',
     title: 'Excepteur sint occaecat cupidatat non proident',
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-    tags: ['Screen', 'Life']
+    tags: ['screen', 'life']
   }
 ];
 

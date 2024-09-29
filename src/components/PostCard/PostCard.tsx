@@ -6,6 +6,7 @@ import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import styles from './PostCard.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const PostCard = ({
   id,
@@ -20,6 +21,7 @@ const PostCard = ({
   title: string;
   text: string;
 }) => {
+  const { t } = useTranslation();
   const router = useRouter();
 
   const onClick = () => {
@@ -31,7 +33,7 @@ const PostCard = ({
       <Image src={image} alt={title} width={480} height={316} />
 
       <div className={styles.textBlock}>
-        <p className="cap1">{category}</p>
+        <p className="cap1">{t(category.toLowerCase())}</p>
         <h2>{title}</h2>
         <p className="body1 secondary">{text}</p>
       </div>

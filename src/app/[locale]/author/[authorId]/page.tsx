@@ -1,11 +1,11 @@
 import React from 'react';
 
+import initTranslations from '@/app/i18n';
 import AuthorHeader from '@/components/AuthorHeader/AuthorHeader';
+import LazyList from '@/components/LazyList/LazyList';
 import Posts from '@/components/Posts/Posts';
 
 import styles from './page.module.scss';
-import initTranslations from '@/app/i18n';
-import LazyList from '@/components/LazyList/LazyList';
 
 const Author = async ({
   params: { locale, authorId }

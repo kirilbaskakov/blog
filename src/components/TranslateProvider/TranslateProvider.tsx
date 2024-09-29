@@ -1,9 +1,11 @@
 'use client';
 
-import initTranslations from '@/app/i18n';
-import { createInstance, Resource } from 'i18next';
 import React, { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
+
+import { createInstance, Resource } from 'i18next';
+
+import initTranslations from '@/app/i18n';
 
 const TranslateProvider = ({
   children,

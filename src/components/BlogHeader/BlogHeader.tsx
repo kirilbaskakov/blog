@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 
 import FeaturedPostImage from '@/assets/FeaturedPost.jpg';
 
 import styles from './BlogHeader.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const BlogHeader = () => {
   const { t } = useTranslation();

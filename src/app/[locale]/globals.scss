@@ -10,7 +10,6 @@ $fs-m: 18px;
 html, body {
     font-family: sans-serif;
     scrollbar-gutter: stable;
-    overflow-x: hidden;
 }
 
 .button {
@@ -35,14 +34,34 @@ a {
 }
 
 
-main {
+main, .main {
+  margin-top: 4rem;
   padding: 0 2rem;
+  overflow-x: hidden;
+  min-height: 80vh;
 }
 
-.main {
-    margin-top: 4rem;
-    padding: 0 2rem;
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+}
 
+.spinner {
+    border: 12px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (min-width: 768px) {
@@ -128,20 +147,4 @@ h5 {
   line-height: 1.5em;
   font-weight: 500;
   color: #4C4C4C;
-}
-
-.slide-in-from-right {
-  animation: 0.5s ease-out 0s 1 slideInFromRight forwards;
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(50%);
-    opacity: 0.2;
-  }
-
-  100% {
-    transform: translate(0%);
-    opacity: 1;
-  }
 }

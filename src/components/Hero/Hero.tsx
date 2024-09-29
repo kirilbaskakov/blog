@@ -1,24 +1,32 @@
+'use client';
+
 import React from 'react';
 
 import styles from './Hero.module.scss';
+import { useTranslation } from 'react-i18next';
+import getPosts from '@/api/getPosts';
+import showDate from '../../utils/showDate';
+import Link from 'next/link';
 
 const Hero = () => {
+  const { t, i18n } = useTranslation();
+  const {
+    posts: [post]
+  } = getPosts({ limit: 1 });
   return (
     <div className={styles.hero}>
       <div className={styles.heroContent}>
         <h3 className={styles.heroSubtitle}>
-          Posted on <b>startup</b>
+          {t('postedOn')} <b>{t(post.category)}</b>
         </h3>
-        <h1 className={styles.heroTitle}>
-          Step-by-step guide to choosing great font pairs
-        </h1>
-        <p className={styles.heroText}>By James West | May 23, 2022</p>
+        <h1 className={styles.heroTitle}>{post.title}</h1>
         <p className={styles.heroText}>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident.
+          By {post.author} | {showDate(post.date, i18n.language)}
         </p>
-        <button className="button">Read more {'>'}</button>
+        <p className={styles.heroText}>{post.text}</p>
+        <Link className="button" href={`/${post.id}`}>
+          {t('readMore') + ' >'}
+        </Link>
       </div>
     </div>
   );
