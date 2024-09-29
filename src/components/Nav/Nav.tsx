@@ -1,28 +1,87 @@
+'use client';
+
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Link from 'next/link';
-import React from 'react';
+
+import LocaleSelect from '../LocaleSelect/LocaleSelect';
+import VideoButton from '../VideoButton/VideoButton';
 import styles from './Nav.module.scss';
 
-const Nav = () => {
+const links = [
+  {
+    href: '/',
+    key: 'home'
+  },
+  {
+    href: '/blog',
+    key: 'blog'
+  },
+  {
+    href: '/about',
+    key: 'aboutUs'
+  },
+  {
+    href: '/contact',
+    key: 'contactUs'
+  }
+];
+
+const Nav = ({ type }: { type: 'header' | 'footer' }) => {
+  const { t } = useTranslation();
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
+  const onBurgerClicked = () => {
+    setIsBurgerOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const onBurgerClose = () => {
+    setIsBurgerOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
   return (
     <nav className={styles.nav}>
+      <div className={styles.burger}>
+        <div className={styles.burgerBtn} onClick={onBurgerClicked}>
+          <div />
+          <div />
+          <div />
+        </div>
+        {isBurgerOpen && (
+          <>
+            <div className={styles.overlay} onClick={onBurgerClose} />
+            <div className={styles.dropdown}>
+              {links.map(({ href, key }) => (
+                <Link href={href} key={key} onClick={onBurgerClose}>
+                  {t(key)}
+                </Link>
+              ))}
+              <VideoButton />
+            </div>
+          </>
+        )}
+      </div>
       <Link href="/" className={styles.navTitle}>
-        Modsen client blog
+        {t('title')}
       </Link>
-      <Link href="/" className={styles.navLink}>
-        Home
-      </Link>
-      <Link href="/" className={styles.navLink}>
-        Blog
-      </Link>
-      <Link href="/" className={styles.navLink}>
-        About us
-      </Link>
-      <Link href="/" className={styles.navLink}>
-        Contact us
-      </Link>
-      <Link href="/" className="button secondary">
-        Video about us
-      </Link>
+      <LocaleSelect />
+      <div className={styles.links}>
+        {links.map(({ href, key }) => (
+          <Link href={href} key={key} className={styles.navLink}>
+            {t(key)}
+          </Link>
+        ))}
+        {type === 'header' ? (
+          <VideoButton />
+        ) : (
+          <Link href="/policy" className={styles.navLink}>
+            {t('policy')}
+          </Link>
+        )}
+      </div>
     </nav>
   );
 };

@@ -1,0 +1,33 @@
+.contactUs {
+    display: flex;
+    gap: 1rem;
+    background: #592EA9;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding: 2rem;
+    text-align: start;
+}
+
+.contactBody {
+    text-align: center;
+    margin: 5rem auto;
+    max-width: 900px;
+    padding: 0rem 2rem;
+}
+
+.subtitle {
+    color: #ffffff90;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: #ffffff90;
+}
+
+@media (min-width: 768px) {
+    .contactUs {
+        gap: 4rem;
+        padding: 2rem 4rem;
+    }
+}

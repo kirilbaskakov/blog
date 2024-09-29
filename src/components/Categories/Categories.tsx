@@ -1,15 +1,28 @@
+'use client';
+
 import React from 'react';
-import categoriesList from './categoriesList';
+import { useTranslation } from 'react-i18next';
+
+import categories from '@/constants/categories';
+
 import CategoryCard from '../CategoryCard/CategoryCard';
 import styles from './Categories.module.scss';
 
 const Categories = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.categories}>
-      <h2>Choose a category</h2>
+      <h2>{t('chooseCategory')}</h2>
       <div className={styles.cards}>
-        {categoriesList.map((category, index) => (
-          <CategoryCard key={index} {...category} />
+        {categories.map(({ key, text, icon }) => (
+          <CategoryCard
+            key={key}
+            categoryKey={key}
+            title={t(key)}
+            text={text}
+            icon={icon}
+          />
         ))}
       </div>
     </div>

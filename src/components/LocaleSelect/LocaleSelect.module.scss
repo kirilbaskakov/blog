@@ -1,0 +1,25 @@
+@import "@/constants/theme";
+
+$select-color: #fff;
+$select-padding: 0 0.5rem;
+
+$option-padding: 1rem;
+$option-color: #000;
+
+.select {
+    background-color: transparent;
+    border:none;
+    color: $select-color;
+    font-size: $fs-m;
+    font-weight: $fw-semibold;
+    padding: $select-padding;
+
+    option {
+        color: $option-color;
+        padding: $option-padding;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

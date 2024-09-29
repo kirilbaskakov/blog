@@ -1,23 +1,56 @@
+$post-card-gap: 2rem;
+$post-card-hover: #FBF6EA;
+$post-card-margin-top: 4rem;
+
+$h2-margin: 1rem 0;
+
+$text-block-width-s: 100%;
+$text-block-width-l: 50%;
+$img-width-s: 100%;
+$img-width-l: 30%;
+
 .postCard {
+    cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: $post-card-gap;
 
     .textBlock {
-        width: 50%;
+        width: $text-block-width-s;
+    }
+
+    &:hover {
+        background: $post-card-hover;
     }
 
     img {
         flex-shrink: 0;
-        width: 30%;
+        width: $img-width-s;
         object-fit: cover;
     }
 
     h2 {
-        margin: 1rem 0;
+        margin: $h2-margin;
     }
 }
 
 .postCard + .postCard {
-    margin-top: 4rem;
+    margin-top: $post-card-margin-top;
+}
+
+@media (min-width: 768px) {
+    .postCard {
+        flex-direction: row;
+
+        .textBlock {
+            width: $text-block-width-l;
+        }
+
+        img {
+            width: $img-width-l;
+        }
+    }
+
+    
 }

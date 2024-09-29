@@ -1,0 +1,42 @@
+@import "@/constants/theme";
+
+$search-padding: 0.8rem 0.75rem;
+
+$variants-max-height: 150px;
+$variants-bg: #f5f5f5;
+
+$variant-padding: 0.75rem;
+$variant-hover: #ddd;
+
+.search {
+    display: flex;
+
+    input {
+        width: 100%;
+        padding: $search-padding;
+        font-size: $fs-s;
+    }
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.variants {
+    overflow-y: auto;
+    max-height: $variants-max-height;
+    width: 100%;
+    position: absolute;
+    background-color: $variants-bg;
+    text-align: center;
+    font-size: $fs-s;
+
+    > div {
+        cursor: pointer;
+        padding: $variant-padding;
+
+        &:hover {
+            background-color: $variant-hover;
+        }
+    }
+}

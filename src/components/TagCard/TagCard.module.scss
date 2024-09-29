@@ -1,0 +1,29 @@
+@import "@/constants/theme";
+
+$tag-card-border: 2px solid #6D6E76;
+$tag-card-radius: 20px;
+$tag-card-padding: 1rem 2rem;
+
+$close-btn-padding: 0 0.5rem;
+
+.tagCard {
+    flex: 1 1 auto; 
+    text-align: center;
+    border: $tag-card-border;
+    border-radius: $tag-card-radius;
+    padding: $tag-card-padding;
+    font-weight: $fw-bold;
+    font-size: $fs-xs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeButton {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-weight: $fw-bold;
+    font-size: $fs-m;
+    padding: $close-btn-padding;
+}

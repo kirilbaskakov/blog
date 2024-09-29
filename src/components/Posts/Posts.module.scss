@@ -1,0 +1,43 @@
+$container-padding: 3rem 0;
+
+$buttons-margin-top: 3rem;
+$buttons-gap: 1.5rem;
+
+$button-gap: 1rem;
+$button-disabled: #6D6E76;
+
+.container {
+    padding: $container-padding;
+    width: 100%;
+    
+    > h2 {
+        text-align: center;
+    }
+
+    .buttons {
+        margin-top: $buttons-margin-top;
+        display: flex;
+        gap: $buttons-gap;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            display: flex;
+            justify-content: center;
+            gap: $button-gap;
+            flex-wrap: wrap-reverse;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+
+            &:disabled {
+                color: $button-disabled;
+            }
+
+            &:first-child {
+                flex-wrap: wrap;
+            }
+        }
+
+    }
+}

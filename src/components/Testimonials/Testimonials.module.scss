@@ -1,78 +1,176 @@
+@import "@/constants/theme";
+
+$testimonials-bg: #FBF6EA;
+$testimonails-padding-s: 1.5rem 3rem;
+$testimonails-padding-l: 3rem 6rem;
+$testimonials-gap-s: 1.5rem;
+$testimonials-gap-l: 6rem;
+
+$title-margin-top: 0.5rem;
+
+$text-margin-top: 1.25rem;
+
+$review-text-animation: 0.8s ease-out 0s 1 forwards;
+
+$separator-border: 1px solid #6D6E76;
+
+$review-info-gap: 1rem;
+$review-info-margin-top: 5rem;
+
+$arrows-gap: 1rem;
+
+$arrow-prev-size: 48px;
+$arrow-prev-color: #fff;
+$arrow-next-size: 62px;
+$arrow-next-color: #000;
+
 .testimonials {
     display: flex;
-    background: #FBF6EA;
-    padding: 4rem 6rem;
-    gap: 6rem;
+    flex-direction: column;
+    background: $testimonials-bg;
+    padding: $testimonails-padding-s;
+    gap: $testimonials-gap-s;
+}
+
+@media (min-width: 1024px) {
+    .testimonials {
+        flex-direction: row;
+        gap: $testimonials-gap-l;
+        padding: $testimonails-padding-l;
+    }
+}
+
+.carousel {
+    overflow-x: hidden;
 }
 
 .title {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.25em;
-    margin-top: 0.5rem;
-}
-
-.subtitle {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.25em;
-    letter-spacing: 3px;
+    margin-top: $title-margin-top;
 }
 
 .text {
-    margin-top: 1.25rem;
-    font-size: 16px;
-    color: #232536;
-    line-height: 1.5em;
+    margin-top: $text-margin-top;
 }
 
 .reviewText {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25em;
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    line-height: $line-height-s;
+    animation: $review-text-animation;
+
+    &.animateLeft {
+        animation-name: slideInFromLeft;
+    }
+
+    &.animateRight {
+        animation-name: slideInFromRight;
+    }
+
+    &.animateToLeft {
+        transform: translateY(-100%);
+        animation-name: slideOutToLeft;
+    }
+
+    &.animateToRight {
+        transform: translateY(-100%);
+        animation-name: slideOutToRight;
+    }
+
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-180%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(180%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translate(0%, -100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-180%, -100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translate(0%, -100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(180%, -100%);
+        opacity: 0;
+    }
 }
 
 .separator {
-    border-left: 1px solid #6D6E76;
+    border-left: $separator-border;
 }
 
 .reviewInfo {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $review-info-gap;
     justify-content: space-between;
-    margin-top: 5rem;
+    margin-top: $review-info-margin-top;
 }
 
-.profile {
-    display: flex;
-    gap: 1rem;
+@media (min-width: 768px) {
+    .reviewInfo {
+        flex-direction: row;
+    }
 }
 
-.profileTitle {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.25em;
-}
-
-.profileSubtitle {
-    font-size: 16px;
-    line-height: 1.5em;
-    color: #6D6E76;
-}
 
 .arrows {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: $arrows-gap;
 }
 
-.arrow {
+.arrowPrev {
     border: none;
-    width: 48px;
-    height: 48px;
+    width: $arrow-prev-size;
+    height: $arrow-prev-size;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
+    background-color: $arrow-prev-color;
+    cursor: pointer;
+}
+.arrowNext {
+    border: none;
+    width: $arrow-next-size;
+    height: $arrow-next-size;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $arrow-next-color;
     cursor: pointer;
 }

@@ -1,12 +1,16 @@
 import React from 'react';
-import styles from './Logos.module.scss';
-import LogosIcon from '@/assets/Logos.png';
+
 import Image from 'next/image';
+
+import logos from './logos';
+import styles from './Logos.module.scss';
 
 const Logos = () => {
   return (
     <div className={styles.logos}>
-      <Image src={LogosIcon} alt="Logos" />
+      {logos.map((logo, index) => (
+        <Image key={index} src={logo} alt="Logo" />
+      ))}
     </div>
   );
 };

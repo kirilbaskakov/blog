@@ -1,0 +1,27 @@
+$observer-element-height: 10px;
+$observer-element-margin-top: 4rem;
+
+$animation: 0.75s ease-out 0s 1 slideInFromRight forwards;
+
+.observerElement {
+    height: $observer-element-height;
+    margin-top: $observer-element-margin-top;
+}
+
+.lazyList {
+    > * {
+        animation: $animation;
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0%);
+                opacity: 1;
+            }
+        }
+    }
+}

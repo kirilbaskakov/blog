@@ -1,0 +1,57 @@
+@import "@/constants/theme";
+
+$header-padding: 5rem 4rem;
+$header-gap: 2rem;
+
+$pattern-width: 80%;
+$pattern-height: 23px;
+$pattern-background: linear-gradient(to right, #FFD050 70%, #592EA9 30%);
+
+$text-block-max-width: 800px;
+
+$p-margin-top: 1.25rem;
+$p-margin-bottom: 1rem;
+
+$img-max-width: 220px;
+
+.authorHeader {
+    display: flex;
+    flex-direction: column;
+    background: $container-background;
+    padding: $header-padding;
+    gap: $header-gap;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.pattern {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    width: $pattern-width;
+    height: $pattern-height;
+    background: $pattern-background;
+}
+
+.textBlock {
+    max-width: $text-block-max-width;
+
+    p {
+        margin-top: $p-margin-top;
+        margin-bottom: $p-margin-bottom;
+    }
+}
+
+@media (min-width: 768px) {
+    .authorHeader {
+        flex-direction: row;
+
+        img {
+            max-width: $img-max-width;
+        }
+    }
+}

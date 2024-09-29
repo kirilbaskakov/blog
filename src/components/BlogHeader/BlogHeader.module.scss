@@ -1,25 +1,54 @@
+@import "@/constants/theme";
+
+$blog-header-padding-s: 2rem;
+$blog-header-gap-s: 2rem;
+$blog-header-padding-l: 4rem;
+$blog-header-gap-l: 6rem;
+
+$h-margin: 1rem 0;
+
+$text-margin-top: 1rem;
+$text-margin-bottom: 1.5rem;
+
+$image-width-s: 100%;
+$image-width-l: 40%;
+
 .blogHeader {
     display: flex;
-    padding: 4rem;
-    gap: 6rem;
-    background: #F4F0F8;
+    flex-direction: column-reverse;
+    padding: $blog-header-padding-s;
+    gap: $blog-header-gap-s;
+    background: $container-background;
 
     h2 {
-        margin: 1rem 0;
+        margin: $h-margin;
     }
 
     .text {
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
+        margin-top: $text-margin-top;
+        margin-bottom: $text-margin-bottom;
     }
 
     .image {
-        width: 40%;
+        width: $image-width-s;
         overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .blogHeader {
+        flex-direction: row;
+        padding: $blog-header-padding-l;
+        gap: $blog-header-gap-l;
     }
 
-    img {
-      width: 100%;
-      object-fit: cover;
+    .image {
+        width: $image-width-l;
+        order: 1;
     }
 }

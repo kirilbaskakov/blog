@@ -1,10 +1,31 @@
+$categories-padding: 4rem 0;
+$cards-columns-s: 1fr;
+$cards-columns-m: 1fr 1fr;
+$cards-columns-l: repeat(4, 1fr);
+$cards-gap: 2rem;
+$cards-margin-top: 2.5rem;
+
 .categories {
-    padding: 4rem 0;
+    padding: $categories-padding;
     text-align: center;
 }
 
 .cards {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: $cards-columns-s;
+    justify-content: center;
+    gap: $cards-gap;
+    margin-top: $cards-margin-top;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: $cards-columns-m;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: $cards-columns-l;
+    }
 }

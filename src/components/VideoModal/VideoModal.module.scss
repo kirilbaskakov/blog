@@ -1,0 +1,28 @@
+$modal-width: 60vw;
+$modal-height: 60vh;
+$modal-min-width: 370px;
+$modal-min-height: 200px;
+$modal-bg: #fff;
+
+$overlay-bg: rgba(0, 0, 0, 0.5);
+
+.modal {
+    position: fixed;
+    width: $modal-width;
+    height: $modal-height;
+    min-width: $modal-min-width;
+    min-height: $modal-min-height;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $modal-bg;
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $overlay-bg;
+}

@@ -1,0 +1,22 @@
+@import "@/constants/theme";
+
+$popup-top: 50px;
+$popup-padding: 0.5rem 2rem;
+$popup-bg: #38ff6d;
+$popup-color: #027d13;
+$popup-opacity: 90%;
+$popup-radius: 12px;
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: $popup-top;
+    transform: translateX(-50%);
+    padding: $popup-padding;
+    background-color: $popup-bg;
+    color: $popup-color;
+    opacity:$popup-opacity;
+    border-radius: $popup-radius;
+    font-weight: $fw-semibold;
+    font-size: $fs-m;
+}

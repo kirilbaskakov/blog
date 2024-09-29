@@ -1,16 +1,33 @@
+$author-list-padding: 4rem 0;
+
+$cards-margin-top: 2rem;
+$card-columns-s: 1fr;
+$card-columns-m: 1fr 1fr;
+$card-columns-l: repeat(4, 1fr);
+$cards-gap: 4rem;
+
 .authorsList {
-    padding: 4rem 0;
+    padding: $author-list-padding;
     text-align: center;
 }
 
-.title {
-    font-weight: 700;
-    font-size: 36px;
+.cards {
+    margin-top: $cards-margin-top;
+    display: grid;
+    grid-template-columns: $card-columns-s;
+    justify-content: center;
+    gap: $cards-gap;
 }
 
-.cards {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: $card-columns-m;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: $card-columns-l;
+    }
 }

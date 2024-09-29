@@ -1,0 +1,9 @@
+@import "@/constants/theme";
+
+$header-padding: 5rem 0;
+
+.policyHeader {
+    background: $container-background;
+    padding: $header-padding;
+    text-align: center;
+}

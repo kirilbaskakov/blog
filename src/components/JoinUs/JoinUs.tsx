@@ -1,15 +1,25 @@
+'use client';
+
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
+import Link from 'next/link';
+
 import styles from './JoinUs.module.scss';
 
 const JoinUs = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Join our team to be a part of our story</h3>
-      <p className={styles.subtitle}>
+      <h2>{t('joinTitle')}</h2>
+      <p className="body1 secondary">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt.
       </p>
-      <button className="button">Join Now</button>
+      <Link href="/contact" className="button">
+        {t('joinNow')}
+      </Link>
     </div>
   );
 };

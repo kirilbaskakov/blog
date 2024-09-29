@@ -1,0 +1,30 @@
+$img-max-height: 600px;
+
+$text-block-padding: 3rem 0;
+$text-block-max-width: 900px;
+
+$h2-margin-top: 2rem;
+
+$p-margin-top: 1rem;
+
+.postBody {
+    img {
+        width: 100%;
+        max-height: $img-max-height;
+        object-fit: cover;
+    }
+
+    .textBlock {
+        padding: $text-block-padding;
+        max-width: $text-block-max-width;
+        margin: 0 auto;
+
+        h2 {
+           margin-top: $h2-margin-top; 
+        }
+
+        p {
+            margin-top: $p-margin-top;
+        }
+    }
+}

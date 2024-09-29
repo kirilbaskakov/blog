@@ -1,0 +1,45 @@
+@import "@/constants/theme";
+
+$text-block-padding-s: 2rem 2.5rem;
+$text-block-padding-top-s: 3rem;
+$text-block-padding-l: 4rem 5rem;
+$text-block-padding-top-l: 6rem;
+$text-block-gap: 1.5rem;
+
+$h-margin: 1rem 0;
+
+.overview {
+    img {
+        display: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    background: $container-background;
+    padding: $text-block-padding-s;
+    padding-top: $text-block-padding-top-s;
+    gap: $text-block-gap;
+
+    h3 {
+        margin: $h-margin;
+    }
+}
+
+@media (min-width: 768px) {
+    .textBlock {
+        display: flex;
+        flex-direction: row;
+        padding: $text-block-padding-l;
+        padding-top: $text-block-padding-top-l;
+    }
+
+    .overview {
+        img {
+            display: block;
+        }
+    }
+}

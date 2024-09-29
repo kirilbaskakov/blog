@@ -1,0 +1,13 @@
+.main {
+    max-width: 900px;
+    padding: 0 2rem;
+    margin: 5rem auto;
+
+    h1, h2 {
+        margin-top: 2rem;
+    }
+
+    h1 + p, h2 + p {
+        margin-top: 1.5rem;
+    }
+}
