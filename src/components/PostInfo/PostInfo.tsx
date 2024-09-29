@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import styles from './PostInfo.module.scss';
 import { useRouter } from 'next/navigation';
-import showDate from '@/utils/showDate';
+import { showDate } from '@/utils';
 import { useTranslation } from 'react-i18next';
 
 const PostInfo = ({

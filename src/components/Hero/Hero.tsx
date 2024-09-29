@@ -5,7 +5,7 @@ import React from 'react';
 import styles from './Hero.module.scss';
 import { useTranslation } from 'react-i18next';
 import getPosts from '@/api/getPosts';
-import showDate from '../../utils/showDate';
+import { showDate } from '@/utils';
 import Link from 'next/link';
 
 const Hero = () => {

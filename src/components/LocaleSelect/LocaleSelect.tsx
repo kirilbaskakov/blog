@@ -45,6 +45,7 @@ const LocaleSelect = () => {
   };
   return (
     <select
+      data-testid="locale-select"
       className={styles.select}
       defaultValue={i18n.language}
       onChange={handleChange}

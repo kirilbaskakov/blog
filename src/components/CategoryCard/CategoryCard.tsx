@@ -7,7 +7,6 @@ import Image, { StaticImageData } from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import styles from './CategoryCard.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const CategoryCard = ({
   icon,

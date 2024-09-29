@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 import styles from './FeaturedPost.module.scss';
-import showDate from '@/utils/showDate';
+import { showDate } from '@/utils';
 
 const FeaturedPost = ({
   id,

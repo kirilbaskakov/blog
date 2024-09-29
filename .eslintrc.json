@@ -1,17 +1,36 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["simple-import-sort"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
   "rules": {
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
-          ["^react"],
-          ["^\\u0000"],
-          ["^node:"],
-          ["^@?\\w"],
-          ["^"],
-          ["^\\."]
+          [
+            "^react"
+          ],
+          [
+            "^\\u0000"
+          ],
+          [
+            "^node:"
+          ],
+          [
+            "^@?\\w"
+          ],
+          [
+            "^"
+          ],
+          [
+            "^\\."
+          ]
         ]
       }
     ],
