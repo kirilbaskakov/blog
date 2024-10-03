@@ -1,5 +1,6 @@
-import getPost from '@/api/getPost';
 import { NextRequest, NextResponse } from 'next/server';
+
+import getPost from '@/api/getPost';
 
 export async function GET(
   request: NextRequest,

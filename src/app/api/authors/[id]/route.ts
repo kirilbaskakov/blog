@@ -1,5 +1,6 @@
-import getAuthor from '@/api/getAuthor';
 import { NextRequest, NextResponse } from 'next/server';
+
+import getAuthor from '@/api/getAuthor';
 
 export async function GET(
   request: NextRequest,
