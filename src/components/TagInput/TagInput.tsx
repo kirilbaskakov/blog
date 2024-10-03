@@ -1,23 +1,22 @@
 import React, { ChangeEventHandler, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import getTags from '@/api/getTags';
 import { TagType } from '@/types/TagType';
 
 import styles from './TagInput.module.scss';
 
 const TagInput = ({
   onSelect,
-  onSearch
+  onSearch,
+  tags
 }: {
   onSelect: (tag: TagType) => void;
   onSearch: () => void;
+  tags: TagType[];
 }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
   const [isFocused, setIsFocused] = useState(false);
-
-  const tags = getTags(i18n.language);
 
   const onChange: ChangeEventHandler<HTMLInputElement> = e => {
     setSearch(e.target.value);
@@ -63,4 +62,4 @@ const TagInput = ({
   );
 };
 
-export default TagInput;
+export default React.memo(TagInput);

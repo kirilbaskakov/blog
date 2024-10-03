@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import languages from '@/constants/languages';
+import languages from '@/constants/i18n/languages';
 import i18nConfig from '@/i18nConfig';
 
 import styles from './LocaleSelect.module.scss';

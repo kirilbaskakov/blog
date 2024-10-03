@@ -1,13 +1,20 @@
+$main-max-width: 900px;
+$main-padding: 0 2rem;
+$main-margin: 5rem auto;
+
+$h-margin-top: 2rem;
+$p-margin-top: 1.5rem;
+
 .main {
-    max-width: 900px;
-    padding: 0 2rem;
-    margin: 5rem auto;
+    max-width: $main-max-width;
+    padding: $main-padding;
+    margin: $main-margin;
 
     h1, h2 {
-        margin-top: 2rem;
+        margin-top: $h-margin-top;
     }
 
     h1 + p, h2 + p {
-        margin-top: 1.5rem;
+        margin-top: $p-margin-top;
     }
 }

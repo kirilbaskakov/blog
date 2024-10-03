@@ -6,6 +6,8 @@ import classNames from 'classnames';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import { CategoryCardType } from '@/types/CategoryCardType';
+
 import styles from './CategoryCard.module.scss';
 
 const CategoryCard = ({
@@ -13,14 +15,14 @@ const CategoryCard = ({
   title,
   categoryKey,
   text,
-  type = 'large',
+  type = CategoryCardType.LARGE,
   selected = false
 }: {
   icon: StaticImageData;
   categoryKey: string;
   title: string;
   text: string;
-  type?: 'small' | 'large';
+  type?: CategoryCardType;
   selected?: boolean;
 }) => {
   const router = useRouter();
@@ -35,7 +37,7 @@ const CategoryCard = ({
       onClick={onClick}
       className={classNames({
         [styles.categoryCard]: true,
-        [styles.small]: type === 'small',
+        [styles.small]: type === CategoryCardType.SMALL,
         [styles.selected]: selected
       })}
     >
@@ -43,7 +45,9 @@ const CategoryCard = ({
         <Image src={icon} alt={`${title} icon`} />
       </div>
       <h3>{title}</h3>
-      {type === 'large' && <p className="body1 secondary">{text}</p>}
+      {type === CategoryCardType.LARGE && (
+        <p className="body1 secondary">{text}</p>
+      )}
     </div>
   );
 };

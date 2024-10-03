@@ -1,7 +1,7 @@
-import BusinessIcon from '@/assets/BusinessIcon.png';
-import EconomyIcon from '@/assets/EconomyIcon.png';
-import StartupIcon from '@/assets/StartupIcon.png';
-import TechnologyIcon from '@/assets/TechnologyIcon.png';
+import BusinessIcon from '@/assets/icons/BusinessIcon.png';
+import EconomyIcon from '@/assets/icons/EconomyIcon.png';
+import StartupIcon from '@/assets/icons/StartupIcon.png';
+import TechnologyIcon from '@/assets/icons/TechnologyIcon.png';
 
 const categories = [
   {

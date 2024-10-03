@@ -1,33 +1,33 @@
-'use client';
-
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
-import getPosts from '@/api/getPosts';
-import { showDate } from '@/utils';
+import { postsRoute } from '@/constants/routes/apiRoutes';
+import { PostType } from '@/types/PostType';
 
+import Date from '../Date/Date';
+import TranslatedText from '../TranslatedText/TranslatedText';
 import styles from './Hero.module.scss';
 
-const Hero = () => {
-  const { t, i18n } = useTranslation();
-  const {
-    posts: [post]
-  } = getPosts({ limit: 1 });
+const Hero = async () => {
+  const post: PostType = await (await fetch(`${postsRoute}/1`)).json();
+
   return (
     <div className={styles.hero}>
       <div className={styles.heroContent}>
         <p className="cap1">
-          {t('postedOn')} <b>{t(post.category)}</b>
+          <TranslatedText>postedOn</TranslatedText>{' '}
+          <b>
+            <TranslatedText>{post.category}</TranslatedText>
+          </b>
         </p>
         <h1 className={styles.heroTitle}>{post.title}</h1>
         <p className="body1">
-          By {post.author} | {showDate(post.date, i18n.language)}
+          By {post.author} | <Date>{post.date}</Date>
         </p>
         <p className="body1">{post.text}</p>
         <Link className="button" href={`/${post.id}`}>
-          {t('readMore') + ' >'}
+          <TranslatedText>readMore</TranslatedText> {'>'}
         </Link>
       </div>
     </div>

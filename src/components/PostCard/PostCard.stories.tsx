@@ -1,4 +1,4 @@
-import PostImage1 from '@/assets/post1.jpg';
+import PostImage1 from '@/assets/data/posts/Post1.jpg';
 
 import PostCard from './PostCard';
 

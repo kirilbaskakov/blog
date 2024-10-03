@@ -1,33 +1,40 @@
-'use client';
-
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
-import getPosts from '@/api/getPosts';
+import { postsRoute } from '@/constants/routes/apiRoutes';
+import { links } from '@/constants/routes/links';
+import { PostType } from '@/types/PostType';
 
 import FeaturedPost from '../FeaturedPost/FeaturedPost';
 import PostInfo from '../PostInfo/PostInfo';
+import TranslatedText from '../TranslatedText/TranslatedText';
 import styles from './PostsBlock.module.scss';
 
-const PostsBlock = () => {
-  const { t } = useTranslation();
-  const data = getPosts({ limit: 4 });
+const PostsBlock = async () => {
+  const { posts }: { posts: PostType[] } = await (
+    await fetch(`${postsRoute}?limit=4`)
+  ).json();
 
   return (
     <div className={styles.postsList}>
       <div>
-        <h2>{t('featuredPost')}</h2>
-        <FeaturedPost {...data.posts[0]} />
+        <h2>
+          <TranslatedText>featuredPost</TranslatedText>
+        </h2>
+        <FeaturedPost {...posts[0]} />
       </div>
       <div>
         <div className={styles.postsHeading}>
-          <h2>{t('allPosts')}</h2>
-          <Link href="/blog">{t('viewAll')}</Link>
+          <h2>
+            <TranslatedText>allPosts</TranslatedText>
+          </h2>
+          <Link href={links.blog}>
+            <TranslatedText>viewAll</TranslatedText>
+          </Link>
         </div>
         <div>
-          {data.posts.map(post => (
+          {posts.map(post => (
             <PostInfo key={post.id} {...post} />
           ))}
         </div>

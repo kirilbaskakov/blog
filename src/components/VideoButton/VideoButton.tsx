@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import VideoModal from '../VideoModal/VideoModal';
@@ -11,7 +11,7 @@ const VideoButton = () => {
 
   const onClick = () => setIsVideoOpen(true);
 
-  const onClose = () => setIsVideoOpen(false);
+  const onClose = useCallback(() => setIsVideoOpen(false), []);
 
   return (
     <>

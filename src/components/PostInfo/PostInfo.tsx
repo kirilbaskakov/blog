@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import { links } from '@/constants/routes/links';
 import { showDate } from '@/utils';
 
 import styles from './PostInfo.module.scss';
@@ -38,7 +39,7 @@ const PostInfo = ({
     <div className={styles.postInfo} onClick={onPostClick}>
       <p className="label1">
         By{' '}
-        <Link href={`/author/${authorId}`} onClick={onAuthorClick}>
+        <Link href={`${links.author}/${authorId}`} onClick={onAuthorClick}>
           {author}
         </Link>{' '}
         | {showDate(date, i18n.language)}

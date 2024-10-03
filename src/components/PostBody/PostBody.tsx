@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import PostImage from '@/assets/post5.jpg';
+import PostImage from '@/assets/data/posts/Post5.jpg';
 
 import styles from './PostBody.module.scss';
 

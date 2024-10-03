@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
+import { links } from '@/constants/routes/links';
+
 import styles from './JoinUs.module.scss';
 
 const JoinUs = () => {
@@ -17,7 +19,7 @@ const JoinUs = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt.
       </p>
-      <Link href="/contact" className="button">
+      <Link href={links.contactUs} className="button">
         {t('joinNow')}
       </Link>
     </div>

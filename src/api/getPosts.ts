@@ -1,18 +1,11 @@
-import posts from '@/constants/posts';
+import posts from '@/constants/data/posts';
 
-const getPosts = ({
-  authorId,
-  category,
-  tags = [],
-  page = 1,
-  limit = 4
-}: {
-  authorId?: number;
-  category?: string;
-  tags?: string[];
-  page?: number;
-  limit?: number;
-} = {}) => {
+const getPosts = (params: URLSearchParams) => {
+  const authorId = Number(params.get('author_id'));
+  const category = params.get('category');
+  const tags = params.get('tags')?.split(', ') ?? [];
+  const page = Number(params.get('page') ?? '1');
+  const limit = Number(params.get('limit') ?? '4');
   let selected = posts;
   if (authorId) {
     selected = selected.filter(post => post.authorId == authorId);

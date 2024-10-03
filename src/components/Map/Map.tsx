@@ -37,4 +37,4 @@ const Map = () => {
   return <div ref={mapContainer} className={styles.container}></div>;
 };
 
-export default Map;
+export default React.memo(Map);

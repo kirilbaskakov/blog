@@ -1,4 +1,4 @@
-import BusinessIcon from '@/assets/BusinessIcon.png';
+import BusinessIcon from '@/assets/icons/BusinessIcon.png';
 
 import CategoryCard from './CategoryCard';
 

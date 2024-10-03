@@ -1,7 +1,8 @@
-import tags from '@/constants/tags';
+import tags from '@/constants/data/tags';
 
-const getTags = (locale: string) => {
-  return tags[locale] ?? [];
+const getTags = (params: URLSearchParams) => {
+  const locale = params.get('locale') ?? 'en';
+  return tags[locale] ?? tags['en'];
 };
 
 export default getTags;

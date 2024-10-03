@@ -1,9 +1,15 @@
+$container-padding: 3rem 0;
+
+$separator-border: 1px solid #6D6E7640;
+$separator-margin-top: 1rem;
+$separator-margin-bottom: 3rem;
+
 .container {
-    padding: 3rem 0;
+    padding: $container-padding;
 }
 
 .separator {
-    border-top: 1px solid #6D6E7640;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+    border-top: $separator-border;
+    margin-top: $separator-margin-top;
+    margin-bottom: $separator-margin-bottom;
 }

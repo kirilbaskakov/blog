@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import getTags from '@/api/getTags';
-import categories from '@/constants/categories';
+import categories from '@/constants/data/categories';
+import { tagsRoute } from '@/constants/routes/apiRoutes';
+import { CategoryCardType } from '@/types/CategoryCardType';
 import { TagType } from '@/types/TagType';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
@@ -18,29 +19,41 @@ const CategorySidebar = ({ category }: { category: string }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [allTags, setAllTags] = useState<Array<TagType>>([]);
+  const [tags, setTags] = useState<Array<TagType>>([]);
 
-  const allTags = getTags(i18n.language);
-
-  const [tags, setTags] = useState<Array<TagType>>(() => {
+  useEffect(() => {
     const values = searchParams.get('tags')?.split(', ');
     if (!values) {
-      return [];
+      setTags([]);
+      return;
     }
-    return values.map(value => ({
-      value,
-      title: allTags.find(tag => tag.value === value)?.title ?? ''
-    }));
-  });
+    setTags(
+      values.map(value => ({
+        value,
+        title: allTags.find(tag => tag.value === value)?.title ?? ''
+      }))
+    );
+  }, [allTags, searchParams]);
 
-  const onTagSelect = (tag: TagType) =>
-    !tags.find(({ value }) => value === tag.value) &&
-    setTags(tags => [...tags, tag]);
+  useEffect(() => {
+    fetch(`${tagsRoute}?locale=${i18n.language}`)
+      .then(response => response.json())
+      .then(allTags => setAllTags(allTags));
+  }, [i18n.language]);
+
+  const onTagSelect = useCallback(
+    (tag: TagType) =>
+      !tags.find(({ value }) => value === tag.value) &&
+      setTags(tags => [...tags, tag]),
+    [tags]
+  );
 
   const onTagDelete = (tagValue: string) => () => {
     setTags(tags.filter(({ value }) => value != tagValue));
   };
 
-  const onSearch = () => {
+  const onSearch = useCallback(() => {
     if (!tags.length) {
       router.push('?');
       return;
@@ -49,11 +62,11 @@ const CategorySidebar = ({ category }: { category: string }) => {
       tags: tags.map(({ value }) => value).join(', ')
     });
     router.push(`?${params.toString()}`);
-  };
+  }, [router, tags]);
 
   return (
     <div className={styles.categorySidebar}>
-      <TagInput onSelect={onTagSelect} onSearch={onSearch} />
+      <TagInput onSelect={onTagSelect} onSearch={onSearch} tags={allTags} />
       <div>
         <h2>{t('categories')}</h2>
         <div className={styles.cards}>
@@ -64,7 +77,7 @@ const CategorySidebar = ({ category }: { category: string }) => {
               title={t(key)}
               text={text}
               icon={icon}
-              type="small"
+              type={CategoryCardType.SMALL}
               selected={category.toLowerCase() === key.toLowerCase()}
             />
           ))}

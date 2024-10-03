@@ -1,4 +1,4 @@
-import AuthorIcon from '@/assets/authorIcon.jpg';
+import AuthorIcon from '@/assets/icons/AuthorIcon.jpg';
 
 import AuthorCard from './AuthorCard';
 
