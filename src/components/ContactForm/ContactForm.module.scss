@@ -1,47 +1,10 @@
-@import "@/constants/theme";
-
 $form-margin-top: 1.5rem;
 $form-gap: 0.75rem;
-
-$input-border: 1px solid #6D6E7680;
-$input-radius: 2px;
-$input-padding: 1rem;
-$input-outline: 1px solid $error-color;
-
-$text-area-min-height: 150px;
-
-$error-height: 1.25em;
 
 .form {
     margin-top: $form-margin-top;
     display: flex;
     flex-direction: column;
     gap: $form-gap;
-
-    input, textarea {
-        width: 100%;
-        resize: none;
-        border: $input-border;
-        border-radius: $input-radius;
-        padding: $input-padding;
-        font-size: $fs-s;
-        color: $color-secondary;
-
-        &.errorInput {
-            outline: $input-outline;
-        }
-    }
-
-    textarea {
-        min-height: $text-area-min-height;
-    }
-}
-
-.error {
-    text-align: left;
-    height: $error-height;
-    color: $error-color;
-    font-size: $fs-xs;
-    font-weight: $fw-semibold;
 }
 

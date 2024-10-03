@@ -1,7 +1,7 @@
-import PostImage1 from '@/assets/post1.jpg';
-import PostImage2 from '@/assets/post2.jpg';
-import PostImage3 from '@/assets/post3.jpg';
-import PostImage4 from '@/assets/post4.jpg';
+import PostImage1 from '@/assets/data/posts/Post1.jpg';
+import PostImage2 from '@/assets/data/posts/Post2.jpg';
+import PostImage3 from '@/assets/data/posts/Post3.jpg';
+import PostImage4 from '@/assets/data/posts/Post4.jpg';
 
 const posts = [
   {

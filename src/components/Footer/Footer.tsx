@@ -8,8 +8,8 @@ import emailjs from '@emailjs/browser';
 import classNames from 'classnames';
 import Image from 'next/image';
 
-import SocialWrapper from '@/assets/Social wrapper.svg';
-import validateEmail from '@/constants/validateEmail';
+import SocialIcons from '@/assets/icons/SocialIcons.svg';
+import validateEmail from '@/constants/validation/validateEmail';
 
 import Nav from '../Nav/Nav';
 import Popup from '../Popup/Popup';
@@ -66,7 +66,7 @@ const Footer = () => {
           <p>Finstreet 118 2561 Fintown </p>
           <p>Hello@finsweet.com 020 7993 2905</p>
         </div>
-        <Image src={SocialWrapper} alt="Social icons" />
+        <Image src={SocialIcons} alt="Social icons" />
       </div>
       {isPopupOpen && (
         <Popup

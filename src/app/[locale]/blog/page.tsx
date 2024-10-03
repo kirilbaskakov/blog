@@ -1,11 +1,11 @@
 import React from 'react';
 
-import initTranslations from '@/app/i18n';
 import BlogHeader from '@/components/BlogHeader/BlogHeader';
 import Categories from '@/components/Categories/Categories';
 import JoinUs from '@/components/JoinUs/JoinUs';
 import LazyList from '@/components/LazyList/LazyList';
 import Posts from '@/components/Posts/Posts';
+import initTranslations from '@/i18n';
 
 import styles from './page.module.scss';
 

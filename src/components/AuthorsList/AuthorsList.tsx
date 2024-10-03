@@ -1,19 +1,21 @@
-'use client';
-
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
-import getAuthors from '@/api/getAuthors';
+import { authorsRoute } from '@/constants/routes/apiRoutes';
+import { AuthorType } from '@/types/AuthorType';
 
 import AuthorCard from '../AuthorCard/AuthorCard';
+import TranslatedText from '../TranslatedText/TranslatedText';
 import styles from './AuthorList.module.scss';
 
-const AuthorsList = () => {
-  const { t } = useTranslation();
-  const authors = getAuthors();
+const AuthorsList = async () => {
+  const authors: AuthorType[] = await (
+    await fetch(`${authorsRoute}?limit=4`)
+  ).json();
   return (
     <div className={styles.authorsList}>
-      <h2>{t('authorsList')}</h2>
+      <h2>
+        <TranslatedText>{'authorsList'}</TranslatedText>
+      </h2>
       <div className={styles.cards}>
         {authors.map(author => (
           <AuthorCard key={author.name} {...author} />

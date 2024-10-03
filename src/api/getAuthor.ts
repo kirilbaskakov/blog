@@ -1,4 +1,4 @@
-import authors from '@/constants/authors';
+import authors from '@/constants/data/authors';
 
 const getAuthor = (id: number) => {
   return authors.find(author => author.id == id);

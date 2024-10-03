@@ -5,7 +5,7 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
-import SocialWrapper from '@/assets/Social wrapper.svg';
+import SocialIcons from '@/assets/icons/SocialIcons.svg';
 
 import styles from './AuthorCard.module.scss';
 
@@ -31,7 +31,7 @@ const AuthorCard = ({
       <Image src={icon} alt={name} className={styles.image} />
       <h3>{name}</h3>
       <p className="body1 secondary">{job}</p>
-      <Image src={SocialWrapper} alt="Social icons" />
+      <Image src={SocialIcons} alt="Social icons" />
     </div>
   );
 };

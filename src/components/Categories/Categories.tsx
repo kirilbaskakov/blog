@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import categories from '@/constants/categories';
+import categories from '@/constants/data/categories';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
 import styles from './Categories.module.scss';

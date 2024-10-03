@@ -6,7 +6,8 @@ import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import SpecialPostImage from '@/assets/SpeciaPost.webp';
+import SpecialPostImage from '@/assets/home/SpeciaPost.webp';
+import { links } from '@/constants/routes/links';
 
 import styles from './SpecialPost.module.scss';
 
@@ -30,7 +31,7 @@ const SpecialPost = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip.
         </p>
-        <Link href="/about" className="button">
+        <Link href={links.aboutUs} className="button">
           {t('discover')} {'>'}
         </Link>
       </div>

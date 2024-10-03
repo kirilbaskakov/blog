@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 import Link from 'next/link';
 
+import { links } from '@/constants/routes/links';
+
 import styles from './AboutUs.module.scss';
 
 const AboutUs = () => {
@@ -21,7 +23,7 @@ const AboutUs = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <Link href="/about" className={styles.link}>
+          <Link href={links.aboutUs} className={styles.link}>
             {t('readMore')} {'>'}
           </Link>
         </div>

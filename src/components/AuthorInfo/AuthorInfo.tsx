@@ -1,32 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 
-import getAuthor from '@/api/getAuthor';
+import { authorsRoute } from '@/constants/routes/apiRoutes';
+import { links } from '@/constants/routes/links';
+import { AuthorType } from '@/types/AuthorType';
 
 import styles from './AuthorInfo.module.scss';
 
 const AuthorInfo = ({ authorId }: { authorId: number }) => {
-  const author = getAuthor(authorId);
+  const [author, setAuthor] = useState<AuthorType | null>(null);
 
-  if (!author) {
-    return null;
-  }
+  useEffect(() => {
+    fetch(`${authorsRoute}/${authorId}`)
+      .then(response => response.json())
+      .then(data => setAuthor(data));
+  }, [authorId]);
 
   return (
     <div className={styles.authorInfo}>
-      <Image
-        src={author.icon}
-        alt="Profile icon"
-        className={styles.authorIcon}
-      />
-      <div>
-        <Link href={`/author/${authorId}`}>
-          <h4>{author.name}</h4>
-        </Link>
-        <p className="body1 secondary">{author.origin}</p>
-      </div>
+      {author && (
+        <>
+          <Image
+            src={author.icon}
+            alt="Profile icon"
+            className={styles.authorIcon}
+          />
+          <div>
+            <Link href={`${links.author}/${authorId}`}>
+              <h4>{author.name}</h4>
+            </Link>
+            <p className="body1 secondary">{author.origin}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

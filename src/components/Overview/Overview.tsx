@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 
-import OverviewImage from '@/assets/Overview.png';
+import OverviewImage from '@/assets/about/Overview.png';
 
 import styles from './Overview.module.scss';
 

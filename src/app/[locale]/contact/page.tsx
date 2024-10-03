@@ -1,9 +1,9 @@
 import React from 'react';
 
-import initTranslations from '@/app/i18n';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import LazyList from '@/components/LazyList/LazyList';
 import Map from '@/components/Map/Map';
+import initTranslations from '@/i18n';
 
 import styles from './page.module.scss';
 

@@ -1,33 +1,51 @@
+@import "@/constants/styles/theme";
+
+$contact-us-gap-s: 1rem;
+$contact-us-gap-l: 4rem;
+$contact-us-color: white;
+$contact-us-margin-top: 3rem;
+$contact-us-margin-bottom: 1rem;
+$contact-us-padding-s: 2rem;
+$contact-us-padding-l: 2rem 4rem;
+
+$contact-body-margin: 5rem auto;
+$contact-body-width: 900px;
+$contact-body-padding: 0 2rem;
+
+$text-color: #ffffff90;
+
+$subtitle-margin-bottom: 1.5rem;
+
 .contactUs {
     display: flex;
-    gap: 1rem;
-    background: #592EA9;
-    color: white;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    padding: 2rem;
+    gap: $contact-us-gap-s;
+    background: $link-color;
+    color: $contact-us-color;
+    margin-top: $contact-us-margin-top;
+    margin-bottom: $contact-us-margin-bottom;
+    padding: $contact-us-padding-s;
     text-align: start;
 }
 
 .contactBody {
     text-align: center;
-    margin: 5rem auto;
-    max-width: 900px;
-    padding: 0rem 2rem;
+    margin: $contact-body-margin;
+    max-width: $contact-body-width;
+    padding: $contact-body-padding;
 }
 
 .subtitle {
-    color: #ffffff90;
-    margin-bottom: 1.5rem;
+    color: $text-color;
+    margin-bottom: $subtitle-margin-bottom;
 }
 
 .text {
-    color: #ffffff90;
+    color: $text-color;
 }
 
 @media (min-width: 768px) {
     .contactUs {
-        gap: 4rem;
-        padding: 2rem 4rem;
+        gap: $contact-us-gap-l;
+        padding: $contact-us-padding-l;
     }
 }

@@ -27,4 +27,4 @@ const VideoModal = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-export default VideoModal;
+export default React.memo(VideoModal);

@@ -1,5 +1,6 @@
 $author-info-gap: 1rem;
 $author-info-animation: 1.6s ease-out 0s 1 appear forwards;
+$author-info-min-height: 56px;
 
 $author-icon-size: 48px;
 
@@ -7,6 +8,7 @@ $author-icon-size: 48px;
     display: flex;
     gap: $author-info-gap;
     animation: $author-info-animation;
+    min-height: $author-info-min-height;
 }
 
 @keyframes appear {

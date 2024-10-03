@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 
-import FeaturedPostImage from '@/assets/FeaturedPost.jpg';
+import FeaturedPostImage from '@/assets/data/posts/FeaturedPost.jpg';
 
 import styles from './BlogHeader.module.scss';
 
